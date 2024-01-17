@@ -96,9 +96,8 @@ main {
     }
 
     .add-book-container {
-        display: flex;
-        flex-direction: column;
         display: none;
+        flex-direction: column;
 
         form {
             display: grid;

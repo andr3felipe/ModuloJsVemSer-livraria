@@ -34,12 +34,12 @@
                 <p>Administrador</p>
             </div>
             <ul>
-                <li class="active-item">Dados pessoais</li>
-                <li>Gerenciar livros</li>
-                <li>Adicionar livro</li>
+                <li class="sidebarItem active-item" id="personalData">Dados pessoais</li>
+                <li class="sidebarItem">Gerenciar livros</li>
+                <li class="sidebarItem" id="addBooks">Adicionar livro</li>
             </ul>
         </aside>
-        <section class="personal-data-container active-section">
+        <section class="personal-data-container active-section" id="personalData">
             <h2>Dados pessoais</h2>
             <div class="personal-data shadow">
               <div class="data-field">
@@ -64,8 +64,8 @@
               </div>
             </div>
         </section>
-
-        <section class="add-book-container">
+        
+        <section class="add-book-container" id="addBooks">
           <h2>Adicionar livro</h2>
           <form>
             <div class="form-group">
