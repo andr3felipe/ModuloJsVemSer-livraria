@@ -1,4 +1,184 @@
 {
-  "users": [],
-  "books": []
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "jhon.doe@example.com",
+      "password": "123456",
+      "orders": [
+        {
+          "id": 1,
+          "date": "2019-01-01",
+          "total": 100,
+          "items": [
+            {
+              "id": 1,
+              "name": "Book 1",
+              "price": 10,
+              "genre": "Informática",
+              "quantity": 2
+            },
+            {
+              "id": 2,
+              "name": "Book 2",
+              "price": 20,
+              "quantity": 3
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "date": "2019-01-02",
+          "total": 200,
+          "items": [
+            {
+              "id": 1,
+              "name": "Book 1",
+              "price": 10,
+              "genre": "Informática",
+              "quantity": 2
+            },
+            {
+              "id": 2,
+              "name": "Book 2",
+              "price": 20,
+              "quantity": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "title": "Sistemas de comunicação",
+      "description": "Este livro abrange assuntos que envolvem os diversos tipos de sistemas de comunicação, sua evolução durante os anos, bem como os parâmetros necessários para o entendimento da matéria. Apresenta os serviços outorgados pela Agência Nacional de Telecomunicações (Anatel). Explica as unidades de medida, sua conversão e os níveis de potência. Discorre sobre ruído, meios de transmissão e tipos de modulação. Conceitua a transformação dos sinais analógicos em sinais digitais. Orienta sobre técnicas de modulação por pulsos e em modems, e sobre os parâmetros utilizados em antena, empregados em várias bandas de frequências. Explana sobre cálculo de viabilidade de um enlace via rádio e seus procedimentos teóricos. Analisa os princípios da fibra óptica e as modulações adotadas para aumentar a capacidade de transmissão de sinais. Traz informações sobre telefonia celular, radiodifusão digital e comunicação via satélite. O conteúdo pode ser aplicado para os cursos técnicos em Redes de Computadores, Sistemas de Comutação, Sistemas de Transmissão, Telecomunicações, entre outros. Possui material de apoio ao professor.",
+      "price": 10,
+      "genre": "Informática",
+      "publishedYear": 2015,
+      "author": "Soares Neto, Vicente",
+      "publisher": "Saraiva Educação S. A.",
+      "pages": 176,
+      "cover": "Livro brochura (paperback)",
+      "language": "Português"
+    },
+    {
+      "id": 2,
+      "title": "Desenvolvimento de aplicações web com Wordpress",
+      "description": "Por meio de explicações didáticas e o passo a passo para a criação de um projeto, esta obra apresenta os principais recursos do WordPress, versão 4.8.3, para desenvolvimento de sites, proporcionando um aprendizado gradativo. Os assuntos abordados são: instalação e configuração do Apache 2.4, MySQL 5.6 e PHP 7; criação e personalização de site; gerenciamento de usuários e edição de páginas; a adição de páginas e links para acessá-las; utilização de plugin, temas e widgets e o processo de publicação do site. Este livro é indicado tanto ao principiante quanto ao profissional de informática que deseja conhecer esse fantástico framework.",
+      "price": 10,
+      "genre": "Informática",
+      "publishedYear": 2018,
+      "author": "Alves, William Pereira",
+      "publisher": "Saraiva Educação S. A.",
+      "pages": 128,
+      "cover": "Livro brochura (paperback)",
+      "language": "Português"
+    },
+    {
+      "id": 3,
+      "title": "Estruturas de dados",
+      "description": "Na ciência da computação são estudados vários tipo de estruturas de dados, sua aplicação e manipulação. A escolha da estrutura de dados adequada para representar uma realidade deve considerar aspectos como alocação da memória, formas de consulta, acesso e operações de inserção e exclusão. O objetivo desta obra é apresentar as principais estruturas de dados conhecidas de uma forma prática e fácil de compreender. São apresentadas as diversas aplicações dessas estruturas por meio de exemplos de programas em C e em Pascal. A obra traz exercícios adicionais que podem ser acessados pelos professores cadastrados no site da Cengage.",
+      "price": 10,
+      "genre": "Informática",
+      "publishedYear": 2006,
+      "author": "Lorenzi, Fabiana; De Mattos, Patrícia; De Carvalho, Tanisi",
+      "publisher": "Cengage Learning Edições Ltda.",
+      "pages": 200,
+      "cover": "Livro brochura (paperback)",
+      "language": "Português"
+    },
+    {
+      "id": 4,
+      "title": "Princípios de sistemas de informação",
+      "description": "Esta Edição De Princípios De Sistemas De Informação Oferece A Cobertura Tradicional De Conceitos De Informática, Mas Coloca O Material No Contexto De Atender Às Necessidades De Empresas E Organizações. Colocar Os Conceitos De Sistemas De Informação Neste Contexto E Assumir Uma Perspectiva De Gestão Sempre Diferenciou Este Livro De Outros De Informática, Tornando-O Atraente Não Apenas Para Os Alunos Com Especialização Em Sistema De Informação De Gestão, Mas Também Para Estudantes De Outras Áreas De Estudo. NO Texto Não É Excessivamente Técnico, Mas Trata Do Papel Desempenhado Pelos Sistemas De Informação Em Uma Organização E Os Princípios-Chave Que Um Gestor Ou Especialista Em Tecnologia Precisa Saber Para Ser Bem-Sucedido.",
+      "price": 10,
+      "genre": "Informática",
+      "publishedYear": 2021,
+      "author": "Stair, Ralph M.; Reynolds, George W.; Bryant, Joey; Frydenberg, Mark; Greenberg, Hollis; Schell, George",
+      "publisher": "Cengage Learning Edições Ltda.",
+      "pages": 600,
+      "cover": "Livro brochura (paperback)",
+      "language": "Português"
+    },
+    {
+      "id": 5,
+      "title": "Blogging heroes",
+      "description": "Entre mais de 102.000.000 de blogs, poucos deles são considerados influentes, inovadores e bem-sucedidos de forma singular. Esses 30 blogueiros ganharam uma quantidade de seguidores fiéis, que cresce a cada dia. Eles escrevem sobre tudo, de tendências de negócios e trabalhos internos na Microsoft até dicas para pais, segredos pessoais, e como prolongar a vida do seu veículo. Apaixonados pelos temas que abordam e, mais ainda pela livre expressão de blogar , o que os encanta, acima de tudo é a própria paixão. Wired, Popular Scinence, CNN, NPR, MSNBC e 20/20, vem retratando esses inovadores e criativos pensadores, que, por meio de conversas individuais com Michael A.Banks, compartilham, neste livro, suas táticas, filosofias, motivações, debatem sobre temas diversos e ainda revelam seus segredos especiais para o sucesso.",
+      "price": 10,
+      "genre": "Informática",
+      "publishedYear": 2009,
+      "author": "Banks, Michael A.",
+      "publisher": "Universo dos Livros Editora LTDA",
+      "pages": 320,
+      "cover": "Livro brochura (paperback)",
+      "language": "Português"
+    },
+    {
+      "id": 6,
+      "title": "Inteligência artificial",
+      "description": "Um dos criadores da Inteligência Artificial como a conhecemos hoje mostra como a revolução das máquinas nos tornará ainda mais humanos Kai-Fu Lee já foi presidente da Google China e é considerado um dos maiores especialistas em inovação tecnológica no mundo. Em Inteligência artificial, ele explica tanto para leitores leigos quanto para aqueles que já dominam o assunto, como o desenvolvimento sem precedentes da IA já está alterando as nossas vidas e expõe quais são as mudanças que podemos esperar nos próximos anos. Apesar de muitos especialistas afirmarem que a IA irá acabar com muitas das profissões que existem, o autor argumenta que, assim como outras grandes revoluções ocorridas na história da humanidade, a IA apenas mudará a forma como trabalhamos. As máquinas, aplicativos e softwares tornarão as jornadas de trabalho menores e aumentarão a geração de renda, fazendo com que as pessoas tenham cada vez mais tempo para se dedicarem ao lazer e a atividades ligadas às artes e ao entretenimento. De forma emocionante, Kai-Fu Lee conta como o diagnóstico de um câncer em estágio avançado fez com que ele repensasse sua relação com o trabalho, seu legado e os próprios rumos da inteligência artificial, se perguntando sobre como a tecnologia poderia ser utilizada para resolver alguns dos maiores problemas que assolam a sociedade neste início de milênio, como a miséria, a desigualdade e a dificuldade de acesso à educação.",
+      "price": 10,
+      "genre": "Informática",
+      "publishedYear": 2009,
+      "author": "Lee, Kai-Fu",
+      "publisher": "Editora Globo S/A",
+      "pages": 292,
+      "cover": "Livro brochura (paperback)",
+      "language": "Português"
+    },
+    {
+      "id": 7,
+      "title": "Java : Ensino didático, desenvolvimento e implementação de aplicações",
+      "description": "A obra aborda os aspectos essenciais da linguagem Java considerando-se a versão 9, o que proporciona ao leitor o entendimento dos principais conceitos referentes à orientação a objetos, ao acesso a banco de dados, à geração de gráficos e ao uso do Java na internet. Fornece noções essenciais voltadas à criação de aplicações do tipo cliente/servidor com acesso a banco de dados MySQL, usando o container Java Tomcat 9. Também é compatível com JShell com NetBeans.",
+      "price": 10,
+      "genre": "Informática",
+      "publishedYear": 2018,
+      "author": "Furgeri, Sérgio",
+      "publisher": "Saraiva Educação S. A.",
+      "pages": 336,
+      "cover": "Livro brochura (paperback)",
+      "language": "Português"
+    },
+    {
+      "id": 8,
+      "title": "Metodologia de Pesquisa para Ciência da Computação",
+      "description": "Seu GPS na busca de um trabalho científico perfeito. Com bom humor e casos ilustrativos, Metodologia de Pesquisa para Ciência da Computação apresenta teoria e técnicas que auxiliam trabalhos científicos em graduação, especialização, mestrado ou doutorado. Com texto detalhado, para que o estudante entenda claramente o porquê das normas e as melhores práticas descritas, Raul Sidnei Wazlawick mostra o que fazer para ter sucesso no TCC, nas dissertações e em teses e aponta os erros mais comuns a serem evitados. Se você não sabe se sua ideia é adequada para uma dissertação ou para publicar um artigo, se já buscou ajuda em livros de metodologia científica, mas só encontrou normas técnicas para formatar texto, se começou a escrever e não sabe como continuar ou está em dúvida sobre o que são objetivos específicos e o que escrever nas conclusões, este livro pode ajudar você!?",
+      "price": 10,
+      "genre": "Informática",
+      "publishedYear": 2020,
+      "author": "Furgeri, Sérgio",
+      "publisher": "GEN LTC; 3ª edição",
+      "pages": 152,
+      "cover": "Capa Comum",
+      "language": "Português"
+    },
+    {
+      "id": 9,
+      "title": "Redes de Computadores e Internet",
+      "description": "Escrito por um dos maiores especialistas em redes no mundo, este livro apresenta os mais importantes conceitos, princípios e tecnologias das redes de computadores e da Internet. De fácil leitura, não requer experiência prévia com sistemas operacionais ou redes nem conhecimento avançado de matemática. Além disso, combina o melhor das abordagens top-down e bottom-up, permitindo aos professores adaptar o conteúdo às suas necessidades em sala de aula. Totalmente revisada e atualizada, esta nova edição inclui IPv4 e IPv6 em todos os capítulos e traz ainda tópicos emergentes e tendências, como a Internet das Coisas e as Redes Definidas por Software (SDN).",
+      "price": 10,
+      "genre": "Informática",
+      "publishedYear": 2016,
+      "author": "Comer, Douglas E.",
+      "publisher": "BOOKMAN COMPANHIA EDITORA LTDA.",
+      "pages": 584,
+      "cover": "Livro brochura (paperback)",
+      "language": "Português"
+    },
+    {
+      "id": 10,
+      "title": "Treinamento em Linguagem C",
+      "description": "A despeito do notável crescimento de novas linguagens de programação, a linguagem C continua sendo a preferida por muitos profissionais de diversas áreas. Ela é, até hoje, a plataforma-base dos serviços de TI do sistema metroviário e das companhias telefônicas, além de ser a porta de entrada para o aprendizado de diversas outras linguagens. Em sua segunda edição, totalmente atualizada, com novo projeto gráfico e reunida em apenas um volume, Treinamento em linguagem C demonstra por que essa linguagem continua sendo disciplina básica nos cursos de ciência da computação. Além disso, os exemplos práticos que podem ser adaptados para a criação de qualquer programa , as seções de revisão e os exercícios ao final de cada capítulo tornam este livro único em sua área.",
+      "price": 10,
+      "genre": "Informática",
+      "publishedYear": 2008,
+      "author": "Mizrahi, Victorine Viviane",
+      "publisher": "Pearson Education do Brasil S.A.",
+      "pages": 432,
+      "cover": "Livro brochura (paperback)",
+      "language": "Português"
+    }
+  ]
 }
