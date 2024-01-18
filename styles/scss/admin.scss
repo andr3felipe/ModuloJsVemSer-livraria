@@ -1,7 +1,26 @@
 @import './global.scss';
 
+.custom-heading {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  
+    > h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+  
+    i {
+      margin-top: -8px;
+      font-size: 2rem;
+      color: $orange-weak;
+    }
+  }
+
 main {
-    margin-top: 10rem;
+    margin-top: 5rem;
     display: flex;
     gap: 120px;
 
