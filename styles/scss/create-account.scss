@@ -1,3 +1,5 @@
+@import "./global.scss";
+
 p, h1, body {
     margin: 0;
 }
@@ -60,7 +62,7 @@ p, h1, body {
 
 .input:focus-visible, .textarea:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 2px rgb(158, 54, 40); 
+    box-shadow: 0 0 0 2px $primary; 
 }
 
 .input:disabled, .textarea:disabled {
@@ -84,13 +86,14 @@ p, h1, body {
     height: 2.5rem; 
     padding: 0.5rem 1rem;
     width: 100%; 
-    background-color: #893429; 
+    background-color: $primary; 
     color: #fff; 
-    transition: background-color 0.2s;
+    transition: opacity 0.2s;
+    border: none;
 }
 
 .button:hover {
-    background-color: rgb(158, 54, 40); 
+    opacity: 0.9; 
 }
 
 .button:disabled {
