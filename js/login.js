@@ -8,11 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-function verifyLogin() {
-  const user = JSON.parse(localStorage.getItem("user"));
-  return user != null;
-}
-
 async function login(event) {
   event.preventDefault();
 

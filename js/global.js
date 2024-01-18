@@ -30,9 +30,15 @@ function currencyFormat(number) {
   }).format(number / 100);
 }
 
+function verifyLogin() {
+  const user = JSON.parse(localStorage.getItem("user"));
+  return user != null;
+}
+
 exports = {
   renderCartCounter,
   getCart,
   currencyFormat,
   getUserData,
+  verifyLogin,
 };

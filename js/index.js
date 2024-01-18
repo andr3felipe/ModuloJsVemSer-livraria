@@ -1,11 +1,20 @@
 document.addEventListener("DOMContentLoaded", async () => {
   renderBooks();
+
+  if (verifyLogin()) {
+    removeLoginButton();
+  }
 });
 
 async function getBooks() {
   const response = await fetch("http://localhost:3000/books");
   const books = await response.json();
   return books;
+}
+
+function removeLoginButton() {
+  document.getElementById("login-button").remove();
+  document.getElementById("login-button-desktop").remove();
 }
 
 function randomGenerator(length) {
@@ -84,7 +93,7 @@ async function renderBooks() {
 
   let recentlySeenBooks = "";
 
-  for (let i = 5; i < 15; i++) {
+  for (let i = 10; i < 15; i++) {
     const book = copyBooks[i];
 
     if (user) {

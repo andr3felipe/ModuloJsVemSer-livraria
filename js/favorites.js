@@ -14,10 +14,9 @@ function verifyLogin() {
   return user != null;
 }
 
-let user = JSON.parse(localStorage.getItem("user"));
-
 function renderFavorities() {
   let items = "";
+  let user = JSON.parse(localStorage.getItem("user"));
 
   if (user.favorites.length === 0) {
     return (document.getElementById(
