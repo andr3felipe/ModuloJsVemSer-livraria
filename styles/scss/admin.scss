@@ -101,7 +101,6 @@ main {
         flex-direction: column;
 
         .custom-nav {
-            max-width: 93%;
             .custom-nav-btn {
                 background-color: $primary;
                 color: $text-white;
@@ -114,6 +113,13 @@ main {
             .custom-nav-btn:hover {
                 opacity: 0.9;
             }
+
+            button {
+                
+                img {
+                    width: 20px;
+                }
+            }
         }
 
         .cards {
@@ -121,8 +127,119 @@ main {
             flex-wrap: wrap;
             gap: 40px;
 
-            .book-img {
+            .custom-card {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                gap: 1rem;
+                flex-flow: column;
+                border: 1px solid $secondary;
+                max-width: 230px;
+                border-radius: $radii-sm;
+                background-color: white;
+                box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+                transition: all 200ms ease-in-out;
+                cursor: pointer;
+                height: 410px;
+              
+                &:hover {
+                  box-shadow: 5px 6px 7px rgba(0, 0, 0, 0.15);
+                }
+              
+                .custom-card-head {
+                  padding: 12px 12px 0px;
+                  width: 100%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: end;
+                  position: relative;
+                }
+              
+                .custom-card-image {
+                  width: 100%;
+                  max-height: 200px;
+              
+                  > img {
+                    object-fit: cover;
+                    width: 100%;
+                  }
+                }
+              
+                .custom-card-body {
+                  width: 100%;
+                  padding: 0px 16px;
+              
+                  p {
+                    margin-bottom: 0;
+                  }
+              
+                  .title {
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                    line-height: 1.125rem;
+                    color: $product-title;
+                    margin-bottom: 1rem;
+                  }
+              
+                  .custom-card-price {
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+              
+                    .price-off {
+                      font-size: 1rem;
+                      line-height: 1.375rem;
+                      font-weight: 500;
+                      display: flex;
+                      -webkit-box-align: center;
+                      align-items: center;
+                      color: $text-dark;
+                      text-decoration: line-through;
+                    }
+              
+                    .price {
+                      display: flex;
+                      -webkit-box-align: center;
+                      align-items: center;
+                      font-size: 1.25rem;
+                      line-height: 1.875rem;
+                      font-weight: 700;
+                      text-decoration: none;
+                      color: $primary;
+                    }
+                  }
+                }
                 
+                .add-to-cart {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 0.5rem;
+                    flex: 1;
+                    padding: 0.5rem 1rem;
+                    border-radius: $radii-sm;
+                    background-color: $primary;
+                    color: white;
+                    font-size: 0.875rem;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    border: none;
+                    transition: all 200ms ease-in-out;
+              
+                    &:hover {
+                      opacity: 0.8;
+                    }
+                  }
+            }
+            
+            .custom-card-footer {
+                display: flex;
+                align-items: center;
+                justify-content: end;
+                gap: 1rem;
+                padding: 0 0.75rem 0.75rem;
+                width: 100%;
             }
 
             .manage-buttons {

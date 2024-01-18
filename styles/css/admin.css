@@ -93,9 +93,6 @@ main .manage-books-container {
   display: none;
   flex-direction: column;
 }
-main .manage-books-container .custom-nav {
-  max-width: 93%;
-}
 main .manage-books-container .custom-nav .custom-nav-btn {
   background-color: #893429;
   color: #fff;
@@ -107,10 +104,114 @@ main .manage-books-container .custom-nav .custom-nav-btn {
 main .manage-books-container .custom-nav .custom-nav-btn:hover {
   opacity: 0.9;
 }
+main .manage-books-container .custom-nav button img {
+  width: 20px;
+}
 main .manage-books-container .cards {
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
+}
+main .manage-books-container .cards .custom-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-flow: column;
+  border: 1px solid #e5e9f2;
+  max-width: 230px;
+  border-radius: 0.25rem;
+  background-color: white;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+  height: 410px;
+}
+main .manage-books-container .cards .custom-card:hover {
+  box-shadow: 5px 6px 7px rgba(0, 0, 0, 0.15);
+}
+main .manage-books-container .cards .custom-card .custom-card-head {
+  padding: 12px 12px 0px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  position: relative;
+}
+main .manage-books-container .cards .custom-card .custom-card-image {
+  width: 100%;
+  max-height: 200px;
+}
+main .manage-books-container .cards .custom-card .custom-card-image > img {
+  object-fit: cover;
+  width: 100%;
+}
+main .manage-books-container .cards .custom-card .custom-card-body {
+  width: 100%;
+  padding: 0px 16px;
+}
+main .manage-books-container .cards .custom-card .custom-card-body p {
+  margin-bottom: 0;
+}
+main .manage-books-container .cards .custom-card .custom-card-body .title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.125rem;
+  color: rgb(66, 70, 77);
+  margin-bottom: 1rem;
+}
+main .manage-books-container .cards .custom-card .custom-card-body .custom-card-price {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+main .manage-books-container .cards .custom-card .custom-card-body .custom-card-price .price-off {
+  font-size: 1rem;
+  line-height: 1.375rem;
+  font-weight: 500;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  color: #000;
+  text-decoration: line-through;
+}
+main .manage-books-container .cards .custom-card .custom-card-body .custom-card-price .price {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #893429;
+}
+main .manage-books-container .cards .custom-card .add-to-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  background-color: #893429;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  transition: all 200ms ease-in-out;
+}
+main .manage-books-container .cards .custom-card .add-to-cart:hover {
+  opacity: 0.8;
+}
+main .manage-books-container .cards .custom-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 1rem;
+  padding: 0 0.75rem 0.75rem;
+  width: 100%;
 }
 main .manage-books-container .cards .manage-buttons {
   display: flex;
