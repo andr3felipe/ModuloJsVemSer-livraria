@@ -87,8 +87,9 @@ main {
   gap: 5rem;
   flex-flow: row wrap;
 }
-main > img {
+main .books-to-sky {
   padding: 1rem;
+  width: 100%;
 }
 main > h1 {
   text-transform: uppercase;
@@ -105,7 +106,7 @@ main > h1::after {
   width: 5rem;
   border: 2px solid #0060b1;
 }
-main > div {
+main .form-div {
   flex: 1;
   flex-basis: 300px;
   max-width: 400px;
@@ -149,6 +150,15 @@ main form #forgot-password {
   cursor: pointer;
   text-transform: uppercase;
   font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
+  .books-to-sky {
+    padding: 0;
+  }
 }
 
 /*# sourceMappingURL=login.css.map */

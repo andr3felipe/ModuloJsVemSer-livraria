@@ -15,8 +15,9 @@ main {
   gap: 5rem;
   flex-flow: row wrap;
 
-  > img {
+  .books-to-sky {
     padding: 1rem;
+    width: 100%;
   }
 
   > h1 {
@@ -36,7 +37,7 @@ main {
     }
   }
 
-  > div {
+  .form-div {
     flex: 1;
     flex-basis: 300px;
     max-width: 400px;
@@ -85,5 +86,15 @@ main {
     cursor: pointer;
     text-transform: uppercase;
     font-weight: bold;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
+
+  .books-to-sky {
+    padding: 0;
   }
 }

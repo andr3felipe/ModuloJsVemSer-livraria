@@ -76,6 +76,7 @@
                 Favoritos
               </a>
               <a
+                href="./cart.html"
                 class="btn d-flex align-items-center justify-content-center gap-1 custom-navbar-icon"
               >
                 <i class="ph ph-shopping-cart fs-4"></i>
@@ -116,15 +117,13 @@
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item text-center custom-nav-item-mobile">
-                  <a class="nav-link active" aria-current="page" href="#"
-                    >Home</a
-                  >
+                  <a class="nav-link" href="../index.html">Início</a>
                 </li>
                 <li class="nav-item text-center custom-nav-item-mobile">
-                  <a class="nav-link" href="#">Login</a>
+                  <a class="nav-link" href="./favorites.html">Favoritos</a>
                 </li>
                 <li class="nav-item text-center custom-nav-item-mobile">
-                  <a class="nav-link" href="#"> Minha cesta </a>
+                  <a class="nav-link" href="./cart.html"> Minha cesta </a>
                 </li>
               </ul>
             </div>
@@ -150,21 +149,33 @@
     </header>
 
     <main>
-      <img
-        src="../assets/login-img.avif"
-        alt="Livros formando umas escada para o céu"
-      />
       <div>
+        <img
+          class="books-to-sky"
+          src="../assets/login-img.avif"
+          alt="Livros formando umas escada para o céu"
+        />
+      </div>
+      <div class="form-div">
         <h1>Fazer login</h1>
-        <form class="border-bottom pb-4">
+        <form class="border-bottom pb-4" onsubmit="login(event)">
           <label class="form-label" for="email">E-mail</label>
-          <input type="email" class="form-control" id="email" name="email" />
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            required
+          />
           <label class="form-label mt-3" for="password">Senha</label>
           <input
+            autocomplete="on"
             type="password"
             class="form-control"
             id="password"
             name="password"
+            required
+            minlength="6"
           />
           <span id="passwordHelpInline" class="form-text">
             Tem que ter 6-20 caracateres.
