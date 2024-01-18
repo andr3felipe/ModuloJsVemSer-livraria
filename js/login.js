@@ -27,11 +27,12 @@ async function login(event) {
     const user = users.find((user) => user.email === email);
 
     if (user?.password === password) {
-      localStorage.setItem("user", JSON.stringify({ user }));
+      localStorage.setItem("user", JSON.stringify(user));
 
       window.location.href = "../pages/favorites.html";
+    } else {
+      event.target.password.value = "";
+      document.getElementById("error").innerHTML = "Credenciais inválidas";
     }
-  } else {
-    alert(result.message);
   }
 }

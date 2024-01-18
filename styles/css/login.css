@@ -15,7 +15,7 @@ body {
 
 .navbar {
   color: #fff;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
   max-width: 90rem;
 }
 .navbar .navbar-logotipo {
@@ -171,6 +171,11 @@ main form #forgot-password {
   cursor: pointer;
   text-transform: uppercase;
   font-weight: bold;
+}
+
+.error {
+  display: block;
+  height: 1.25rem;
 }
 
 @media (max-width: 768px) {

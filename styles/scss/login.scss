@@ -89,6 +89,11 @@ main {
   }
 }
 
+.error {
+  display: block;
+  height: 1.25rem;
+}
+
 @media (max-width: 768px) {
   main {
     padding: 1rem;

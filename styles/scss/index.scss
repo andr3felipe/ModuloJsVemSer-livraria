@@ -44,15 +44,6 @@ h1 {
   }
 }
 
-@keyframes heart {
-  0% {
-    font-size: 1.7rem;
-  }
-  100% {
-    font-size: 1.9rem;
-  }
-}
-
 .custom-cards-container {
   display: flex;
   flex-flow: row wrap;
@@ -188,20 +179,6 @@ h1 {
       align-items: center;
       justify-content: center;
       min-width: 2rem;
-
-      .favorite {
-        display: none;
-      }
-
-      &:hover {
-        .not-favorite {
-          display: none;
-        }
-
-        .favorite {
-          display: inline-block;
-        }
-      }
     }
   }
 }
