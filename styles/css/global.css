@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #fff;
+}
+
+.header {
+  background-color: #0060b1;
+}
+
+.navbar {
+  color: #fff;
+  padding: 0.75rem 1rem;
+  max-width: 90rem;
+}
+.navbar .navbar-logotipo {
+  font-size: 2rem;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+.navbar .navbar-logotipo:hover {
+  color: black;
+}
+.navbar .custom-navbar-toggler {
+  border-color: white;
+}
+.navbar .custom-navbar-icon {
+  transition: all 0.3s ease-in-out;
+  color: white;
+  font-weight: 500;
+}
+.navbar .custom-navbar-icon:hover {
+  color: black;
+}
+.navbar .custom-form-container {
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+}
+.navbar .custom-form-container ::-webkit-input-placeholder {
+  text-align: center;
+}
+.navbar .custom-form-container .custom-search-bar {
+  text-overflow: ellipsis;
+}
+.navbar .custom-magnifying-glass {
+  border: none;
+  position: absolute;
+  right: 1rem;
+  background-color: transparent;
+  display: inline-block;
+  font-size: 1.5rem;
+}
+.navbar .custom-nav-item-mobile:hover {
+  background-color: #0060b1;
+}
+.navbar .custom-nav-item-mobile:hover > a {
+  color: white;
+}
+
+#cart-icon {
+  position: relative;
+}
+
+#cart-count {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -15px;
+  left: -10px;
+  height: 20px;
+  background-color: rgb(227, 82, 20);
+  color: white;
+  padding: 0 6px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+@media (min-width: 750px) {
+  .custom-navbar-toggler {
+    display: none;
+  }
+}
+@media (max-width: 750px) {
+  .desktop-navbar {
+    display: none !important;
+  }
+}
+
+/*# sourceMappingURL=global.css.map */

@@ -1,0 +1,317 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "jhon.doe@example.com",
+      "password": "123456",
+      "orders": [
+        {
+          "id": 1,
+          "date": "2019-01-01",
+          "total": 100,
+          "items": [
+            {
+              "id": 1,
+              "name": "Book 1",
+              "price": 1000,
+              "category": "Informática",
+              "quantity": 2
+            },
+            {
+              "id": 2,
+              "name": "Book 2",
+              "price": 20,
+              "quantity": 3
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "date": "2019-01-02",
+          "total": 200,
+          "items": [
+            {
+              "id": 1,
+              "name": "Book 1",
+              "price": 1000,
+              "category": "Informática",
+              "quantity": 2
+            },
+            {
+              "id": 2,
+              "name": "Book 2",
+              "price": 20,
+              "quantity": 3
+            }
+          ]
+        }
+      ],
+      "favorites": []
+    }
+  ],
+  "books": [
+    {
+      "id": "1",
+      "title": "Sistemas de comunicação",
+      "description": "Este livro abrange assuntos que envolvem os diversos tipos de sistemas de comunicação, sua evolução durante os anos, bem como os parâmetros necessários para o entendimento da matéria. Apresenta os serviços outorgados pela Agência Nacional de Telecomunicações (Anatel). Explica as unidades de medida, sua conversão e os níveis de potência. Discorre sobre ruído, meios de transmissão e tipos de modulação. Conceitua a transformação dos sinais analógicos em sinais digitais. Orienta sobre técnicas de modulação por pulsos e em modems, e sobre os parâmetros utilizados em antena, empregados em várias bandas de frequências. Explana sobre cálculo de viabilidade de um enlace via rádio e seus procedimentos teóricos. Analisa os princípios da fibra óptica e as modulações adotadas para aumentar a capacidade de transmissão de sinais. Traz informações sobre telefonia celular, radiodifusão digital e comunicação via satélite. O conteúdo pode ser aplicado para os cursos técnicos em Redes de Computadores, Sistemas de Comutação, Sistemas de Transmissão, Telecomunicações, entre outros. Possui material de apoio ao professor.",
+      "price": 1000,
+      "discountPercent": 10,
+      "category": "Informática",
+      "publishedYear": 2015,
+      "author": "Soares Neto, Vicente",
+      "publisher": "Saraiva Educação S. A.",
+      "pages": 176,
+      "cover": "Livro brochura (paperback)",
+      "language": "Português"
+    },
+    {
+      "title": "Teoria de Unificação",
+      "author": "Luiz Carlos de Almeida",
+      "genre": "ficcao",
+      "price": 1000,
+      "description": "O aprendiz Trizno é procurado pelo assassinato de seus mestres: três dentre os mais poderosos magos existentes no mundo. Como se não bastasse, roubou armas lendárias e reuniu um grupo para se opor ao reino e impedi-lo de recuperar suas relíquias. O rei, frustrado por anos falhando em capturar esses criminosos, ordena uma investida impiedosa para subjugar o assassino e ladrão. Contudo, mesmo encurralado por centenas de soldados e magos, ninguém imaginava que Trizno poderia escapar usando uma magia quase esquecida e a mais antiga do seu mundo, a Diáspora.",
+      "id": "2"
+    },
+    {
+      "id": "3",
+      "title": "Estruturas de dados",
+      "description": "Na ciência da computação são estudados vários tipo de estruturas de dados, sua aplicação e manipulação. A escolha da estrutura de dados adequada para representar uma realidade deve considerar aspectos como alocação da memória, formas de consulta, acesso e operações de inserção e exclusão. O objetivo desta obra é apresentar as principais estruturas de dados conhecidas de uma forma prática e fácil de compreender. São apresentadas as diversas aplicações dessas estruturas por meio de exemplos de programas em C e em Pascal. A obra traz exercícios adicionais que podem ser acessados pelos professores cadastrados no site da Cengage.",
+      "price": 1000,
+      "discountPercent": 10,
+      "category": "Informática",
+      "publishedYear": 2006,
+      "author": "Lorenzi, Fabiana; De Mattos, Patrícia; De Carvalho, Tanisi",
+      "publisher": "Cengage Learning Edições Ltda.",
+      "pages": 200,
+      "cover": "Livro brochura (paperback)",
+      "language": "Português"
+    },
+    {
+      "id": "4",
+      "title": "Princípios de sistemas de informação",
+      "description": "Esta Edição De Princípios De Sistemas De Informação Oferece A Cobertura Tradicional De Conceitos De Informática, Mas Coloca O Material No Contexto De Atender Às Necessidades De Empresas E Organizações. Colocar Os Conceitos De Sistemas De Informação Neste Contexto E Assumir Uma Perspectiva De Gestão Sempre Diferenciou Este Livro De Outros De Informática, Tornando-O Atraente Não Apenas Para Os Alunos Com Especialização Em Sistema De Informação De Gestão, Mas Também Para Estudantes De Outras Áreas De Estudo. NO Texto Não É Excessivamente Técnico, Mas Trata Do Papel Desempenhado Pelos Sistemas De Informação Em Uma Organização E Os Princípios-Chave Que Um Gestor Ou Especialista Em Tecnologia Precisa Saber Para Ser Bem-Sucedido.",
+      "price": 1000,
+      "discountPercent": 10,
+      "category": "Informática",
+      "publishedYear": 2021,
+      "author": "Stair, Ralph M.; Reynolds, George W.; Bryant, Joey; Frydenberg, Mark; Greenberg, Hollis; Schell, George",
+      "publisher": "Cengage Learning Edições Ltda.",
+      "pages": 600,
+      "cover": "Livro brochura (paperback)",
+      "language": "Português"
+    },
+    {
+      "title": "Teoria de Unificação",
+      "author": "Luiz Carlos de Almeida",
+      "genre": "ficcao",
+      "price": 1000,
+      "description": "O aprendiz Trizno é procurado pelo assassinato de seus mestres: três dentre os mais poderosos magos existentes no mundo. Como se não bastasse, roubou armas lendárias e reuniu um grupo para se opor ao reino e impedi-lo de recuperar suas relíquias. O rei, frustrado por anos falhando em capturar esses criminosos, ordena uma investida impiedosa para subjugar o assassino e ladrão. Contudo, mesmo encurralado por centenas de soldados e magos, ninguém imaginava que Trizno poderia escapar usando uma magia quase esquecida e a mais antiga do seu mundo, a Diáspora.",
+      "id": "5"
+    },
+    {
+      "id": "6",
+      "title": "Inteligência artificial",
+      "description": "Um dos criadores da Inteligência Artificial como a conhecemos hoje mostra como a revolução das máquinas nos tornará ainda mais humanos Kai-Fu Lee já foi presidente da Google China e é considerado um dos maiores especialistas em inovação tecnológica no mundo. Em Inteligência artificial, ele explica tanto para leitores leigos quanto para aqueles que já dominam o assunto, como o desenvolvimento sem precedentes da IA já está alterando as nossas vidas e expõe quais são as mudanças que podemos esperar nos próximos anos. Apesar de muitos especialistas afirmarem que a IA irá acabar com muitas das profissões que existem, o autor argumenta que, assim como outras grandes revoluções ocorridas na história da humanidade, a IA apenas mudará a forma como trabalhamos. As máquinas, aplicativos e softwares tornarão as jornadas de trabalho menores e aumentarão a geração de renda, fazendo com que as pessoas tenham cada vez mais tempo para se dedicarem ao lazer e a atividades ligadas às artes e ao entretenimento. De forma emocionante, Kai-Fu Lee conta como o diagnóstico de um câncer em estágio avançado fez com que ele repensasse sua relação com o trabalho, seu legado e os próprios rumos da inteligência artificial, se perguntando sobre como a tecnologia poderia ser utilizada para resolver alguns dos maiores problemas que assolam a sociedade neste início de milênio, como a miséria, a desigualdade e a dificuldade de acesso à educação.",
+      "price": 1000,
+      "discountPercent": 10,
+      "category": "Informática",
+      "publishedYear": 2009,
+      "author": "Lee, Kai-Fu",
+      "publisher": "Editora Globo S/A",
+      "pages": 292,
+      "cover": "Livro brochura (paperback)",
+      "language": "Português"
+    },
+    {
+      "id": "7",
+      "title": "Java : Ensino didático, desenvolvimento e implementação de aplicações",
+      "description": "A obra aborda os aspectos essenciais da linguagem Java considerando-se a versão 9, o que proporciona ao leitor o entendimento dos principais conceitos referentes à orientação a objetos, ao acesso a banco de dados, à geração de gráficos e ao uso do Java na internet. Fornece noções essenciais voltadas à criação de aplicações do tipo cliente/servidor com acesso a banco de dados MySQL, usando o container Java Tomcat 9. Também é compatível com JShell com NetBeans.",
+      "price": 1000,
+      "discountPercent": 10,
+      "category": "Informática",
+      "publishedYear": 2018,
+      "author": "Furgeri, Sérgio",
+      "publisher": "Saraiva Educação S. A.",
+      "pages": 336,
+      "cover": "Livro brochura (paperback)",
+      "language": "Português"
+    },
+    {
+      "id": "8",
+      "title": "Metodologia de Pesquisa para Ciência da Computação",
+      "description": "Seu GPS na busca de um trabalho científico perfeito. Com bom humor e casos ilustrativos, Metodologia de Pesquisa para Ciência da Computação apresenta teoria e técnicas que auxiliam trabalhos científicos em graduação, especialização, mestrado ou doutorado. Com texto detalhado, para que o estudante entenda claramente o porquê das normas e as melhores práticas descritas, Raul Sidnei Wazlawick mostra o que fazer para ter sucesso no TCC, nas dissertações e em teses e aponta os erros mais comuns a serem evitados. Se você não sabe se sua ideia é adequada para uma dissertação ou para publicar um artigo, se já buscou ajuda em livros de metodologia científica, mas só encontrou normas técnicas para formatar texto, se começou a escrever e não sabe como continuar ou está em dúvida sobre o que são objetivos específicos e o que escrever nas conclusões, este livro pode ajudar você!?",
+      "price": 1000,
+      "discountPercent": 10,
+      "category": "Informática",
+      "publishedYear": 2020,
+      "author": "Furgeri, Sérgio",
+      "publisher": "GEN LTC; 3ª edição",
+      "pages": 152,
+      "cover": "Capa Comum",
+      "language": "Português"
+    },
+    {
+      "id": "9",
+      "title": "Redes de Computadores e Internet",
+      "description": "Escrito por um dos maiores especialistas em redes no mundo, este livro apresenta os mais importantes conceitos, princípios e tecnologias das redes de computadores e da Internet. De fácil leitura, não requer experiência prévia com sistemas operacionais ou redes nem conhecimento avançado de matemática. Além disso, combina o melhor das abordagens top-down e bottom-up, permitindo aos professores adaptar o conteúdo às suas necessidades em sala de aula. Totalmente revisada e atualizada, esta nova edição inclui IPv4 e IPv6 em todos os capítulos e traz ainda tópicos emergentes e tendências, como a Internet das Coisas e as Redes Definidas por Software (SDN).",
+      "price": 1000,
+      "discountPercent": 10,
+      "category": "Informática",
+      "publishedYear": 2016,
+      "author": "Comer, Douglas E.",
+      "publisher": "BOOKMAN COMPANHIA EDITORA LTDA.",
+      "pages": 584,
+      "cover": "Livro brochura (paperback)",
+      "language": "Português"
+    },
+    {
+      "id": "10",
+      "title": "Treinamento em Linguagem C",
+      "description": "A despeito do notável crescimento de novas linguagens de programação, a linguagem C continua sendo a preferida por muitos profissionais de diversas áreas. Ela é, até hoje, a plataforma-base dos serviços de TI do sistema metroviário e das companhias telefônicas, além de ser a porta de entrada para o aprendizado de diversas outras linguagens. Em sua segunda edição, totalmente atualizada, com novo projeto gráfico e reunida em apenas um volume, Treinamento em linguagem C demonstra por que essa linguagem continua sendo disciplina básica nos cursos de ciência da computação. Além disso, os exemplos práticos que podem ser adaptados para a criação de qualquer programa , as seções de revisão e os exercícios ao final de cada capítulo tornam este livro único em sua área.",
+      "price": 1000,
+      "discountPercent": 10,
+      "category": "Informática",
+      "publishedYear": 2008,
+      "author": "Mizrahi, Victorine Viviane",
+      "publisher": "Pearson Education do Brasil S.A.",
+      "pages": 432,
+      "cover": "Livro brochura (paperback)",
+      "language": "Português"
+    },
+    {
+      "id": "11",
+      "title": "Comboio de espectros",
+      "description": "Ele está de volta! Depois de Mausoléu e Treze, o Anfitrião retorna do túmulo para horrorizar os leitores com suas histórias macabras, de medo e de sangue. Espíritos vingativos, mortos-vivos, criaturas infernais, divindades antigas e constructos enlouquecem os protagonistas privando-os da sanidade e da própria vida. Abra as páginas deste novo tomo de Duda Falcão e venha fazer você também parte do Comboio de Espectros.",
+      "price": 1000,
+      "discountPercent": 10,
+      "category": "Terror",
+      "publishedYear": 2017,
+      "author": "Falcão, Duda",
+      "publisher": "Avec Editora e Comércio de Livros Ltda.",
+      "pages": 208,
+      "cover": "Livro brochura (paperback)",
+      "language": "Português"
+    },
+    {
+      "id": "12",
+      "title": "Calmaria Forçada",
+      "description": "UM SUSPENSE SOMBRIO DE HORROR DOR E TRAUMAS, Rosane Montalvão estreia na literatura de suspense com um terror psicológico que nos leva para o fundo da alma. Uma trama cortante, cruel e perturbadora. A vida não é bela, as histórias do dia a dia costumam ser cansativas e previsíveis.  Até que surge alguém esta nova escritora com um enredo inusitado, perturbador, apavorante.  A protagonista Alana, uma bailarina traumatizada com o suicídio do filho percorre a trama de suspense desvelando elementos de sadismo, autodestruição, amor e ambição. O que sobra de um lar depois que um filho se mata ao descobrir uma verdade devastadora? De que serve a vida se o parceiro é um advogado que quer enterrá-la viva (e a interna num hospício de horrores), enquanto se afunda no álcool e no egoísmo?  Este livro surpreende a cada página, a cada um dos 17 capítulos curtos e objetivos. Fantasmas do passado vão saindo dos armários de uma casa sombria ou pelos corredores do hospício onde Alana sofre, para arrepiar, chocar e hipnotizar o leitor.  Tudo aqui é sombrio. Tudo aqui é horror. A trama avança, cada vez mais distante de um final feliz e a crueldade perpassa cada página, cortando mente e alma. Sim, existe amor em meio a esse caos, mas a cada cena ele é revisto. Sim, existe uma família, mas  também esta precisa ser reavaliada. Estamos diante de um em thriller de suspense, dor e traumas familiares. A história é pesada, sinistra e desconfortante, com barulhos de portas, coisas caindo, ecos fantasmagóricos de seres de outro mundo, situações-limite. Rosane Montalvão nos leva para o mais profundo da alma humana, para um verdadeiro sacrifício pós-traumático de sofrimentos indizíveis, de tal forma que, ao final, paradoxalmente incomodados e aliviados, somos levados a rever a própria vida.  A vida não é bela. E precisamos ter cuidado, pois amanhã pode ser pior. Bem pior. Rosane Montalvão 47 anos, é uma carioca que lê desde sempre e sempre quis escrever. Ela se formou em publicidade, mas investiu em reformas e revendas de imóveis. Durante a pandemia da Covid-19, colocou sua máscara, afundou em bibliotecas e escreveu Calmaria forçada , seu primeiro romance. Para ela, nas histórias humanas existem espaços vazios e rastros a serem descobertos. ",
+      "price": 1000,
+      "discountPercent": 10,
+      "category": "Terror",
+      "publishedYear": 2021,
+      "author": "Montalvão, Rosane",
+      "publisher": "Geração Editorial Ltda",
+      "pages": 160,
+      "cover": "Livro capa dura (hardcover)",
+      "language": "Português"
+    },
+    {
+      "id": "13",
+      "title": "O vilarejo",
+      "description": "lustrações coloridas dão vida a romance com elementos de horror gótico e suspense. Do criador da série original Netflix Bom dia, Verônica . Em 1589, o padre e demonologista Peter Binsfeld fez a ligação de cada um dos pecados capitais a um demônio, supostamente responsável por invocar o mal nas pessoas. É a partir daí que Raphael Montes cria sete histórias situadas em um vilarejo isolado, apresentando a lenta degradação dos moradores do lugar, e pouco a pouco o próprio vilarejo vai sendo dizimado, maculado pela neve e pela fome. As histórias podem ser lidas em qualquer ordem, sem prejuízo de sua compreensão, mas se relacionam de maneira complexa, de modo que ao término da leitura as narrativas convergem para uma única e surpreendente conclusão. ",
+      "price": 1000,
+      "discountPercent": 10,
+      "category": "Terror",
+      "publishedYear": 2015,
+      "author": "Montes, Raphael",
+      "publisher": "Editora Schwarcz SA",
+      "pages": 96,
+      "cover": "Livro brochura (paperback)",
+      "language": "Português"
+    },
+    {
+      "id": "14",
+      "title": "Sete monstros brasileiros",
+      "description": "O terror da mitologia brasileira.A literatura fantástica contemporânea muito se alimenta de personagens das mitologias grega e nórdica, das tradições celtas e bretãs, da literatura árabe do Oriente Médio e dos contos tradicionais do Extremo Oriente. Pouco se lê, no entanto, sobre os seres fantásticos criados e reproduzidos na extensa tradição da literatura oral brasileira. Nós também, afinal, temos os nossos monstros. Instigado pela riqueza dessa tradição, Bráulio Tavares reuniu, em sete contos inéditos, histórias inspiradas nas criaturas monstruosas da mitologia brasileira, compondo assim uma coletânea de aventuras protagonizadas por alguns dos nossos personagens mais assustadores, alguns conhecidos Brasil adentro apenas pela tradição oral, como o papa-figo, e outros mais famosos, como o lobisomem e a Iara.",
+      "price": 1000,
+      "discountPercent": 10,
+      "category": "Terror",
+      "publishedYear": 2014,
+      "author": "Tavares, Braulio",
+      "publisher": "Casa dos Mundos Produção Editorial e Games LTDA",
+      "pages": 104,
+      "cover": "Livro brochura (paperback)",
+      "language": "Português"
+    },
+    {
+      "id": "15",
+      "title": "Horror na colina de Darrington",
+      "description": "Em 2004, Benjamin Simons deixa o orfanato em que viveu desde a infância para ajudar alguns parentes num momento difícil. No entanto, certa madrugada, a tranquilidade da colina de Darrington é interrompida por um estranho pesadelo, que vai tomando formas reais a cada minuto. Logo, Ben descobre-se preso numa casa que abriga que abriga mistérios e parece próxima do inferno. Dez anos depois, Ben decide contar tudo o que viveu, desvendando uma conspiração capaz de destruir até a sua própria sanidade. Onde termina o inferno e começa a realidade?",
+      "price": 1000,
+      "discountPercent": 10,
+      "category": "Terror",
+      "publishedYear": 2016,
+      "author": "Barcelos, Marcus",
+      "publisher": "Faro Editorial Eireli",
+      "pages": 142,
+      "cover": "Livro brochura (paperback)",
+      "language": "Português"
+    },
+    {
+      "id": "16",
+      "title": "Jogo de verdades",
+      "description": "Os nomes aparecem. Nomes e valores. As cidades. Os partidos. Tudo, sem exceção. Claro e limpo na tela. Rodrigo começa a passar os olhos, sem falar nada. Só analisando cuidadosamente todas as informações que ia lendo. Um jovem com um ideal na Grande São Paulo. Um político em uma trama corriqueira. Vidas distintas, experiências diferenciadas. Em um momento inesperado, no bairro de Neoville, essas histórias de vida se conectam. Quando Júlio, um adolescente comum, descobre falcatruas políticas após um pen drive parar em suas mãos, sua vida passa a ser repleta de adrenalina. Esse é o ponto de partida para uma aventura surpreendente e ousada, em um jogo de poder que fascina e ludibria até os mais experientes. Bem -vindo a Jogo de verdades, onde os mais tímidos têm sua importância, os ligeiros se destacam e os temperamentais podem ser o próximo alvo.",
+      "price": 1000,
+      "discountPercent": 10,
+      "category": "Ficção Científica e Fantasia",
+      "publishedYear": 2016,
+      "author": " Vinícius Almeida",
+      "publisher": "Talentos da Literatura Brasileira",
+      "pages": 224,
+      "cover": "Livro brochura (paperback)",
+      "language": "Português"
+    },
+    {
+      "id": "17",
+      "title": "AGÊNCIA BARNETT E ASSOCIADOS",
+      "description": "Valérie Estava Atônita. De Que Suspeita Ele Falava? Com Que Propósito? Sentia Uma Ansiedade Crescente E Confusa, Causada Pela Insistência Realmente Dolorosa Do Seu Interlocutor. Entre Suas Mãos Abertas, Ela Pesava Amassa De Pérolas Amontoadas, E Agora Esse Volume Parecia Tornar-Se Cada Vez Mais Leve. Ela Examinou, E Os Seus Olhos Discerniam Cores Diferentes ,Reflexos Desconhecidos, Uma Semelhança Chocante, Uma Perfeição Equívoca, Todo Um Conjunto De Detalhes Perturbadores. Nas Sombras De Sua Mente A Verdade Começava A Brilhar, Cada Vez Mais Distinta E Ameaçadora.",
+      "price": 1000,
+      "discountPercent": 10,
+      "category": "Ficção Científica e Fantasia",
+      "publishedYear": 2016,
+      "author": " Maurice Leblanc",
+      "publisher": "Principis",
+      "pages": 160,
+      "cover": "Livro brochura (paperback)",
+      "language": "Português"
+    },
+    {
+      "id": "18",
+      "title": "MANUAL DE SOBREVIVENCIA AOS VAMPIROS",
+      "description": "Dessa vez, minha impressão sobre um dos livros da autora e redatora Rita Trevisan melhorou de uma forma soberamente melhor! Em Manual de Sobrevivência aos Vampiros, July tem problemas muito mais complexos do que antes, e precisa tomar decisões difíceis sobre eles. Agora, namorando um pop-Star nacional, a moça precisa lidar com as fãs enlouquecidas, uma \"nova amiga\" que pretende sugar suas energias e ainda os problemas escolares que ocorrem em sua fase da adolescência. Este livro, diferente do primeiro, mostra a protagonista July com problemas muito mais comuns em muitas outras jovens por ai ( como se ter um namorado-estrela fosse comum, mas... deixemos de lado). Além de ter que lutar pela sobrevivência de seu namoro, July ainda precisa tentar manter sua amizade com suas velhas amigas - não me perguntem o nome delas. -estável e sã, algo que acontece muito quando nos aproximamos de grupos diferentes e deixamos o nosso de lado. As dicas do livro me decepcionaram um pouco: algumas eu jurava que já havia visto no livro antecessor a esse, e as outras eram dirigidas especialmente para adolescentes com namorado e, como eu não me encaixo nesse tipo de statu, não as achei útil. July é uma personagem que não me agradou também: eu esperava uma adolescente com personalidade mais forte e que desse uma virada por cima de um jeito épico! Porém ela é simplesmente como... nós somos! O que é um ponto positivo, confusamemte, e uma inspiração, literalmente.",
+      "price": 1000,
+      "discountPercent": 10,
+      "category": "Ficção Científica e Fantasia",
+      "publishedYear": 2011,
+      "author": "RITA TREVISAN",
+      "publisher": "ESCALA",
+      "pages": 160,
+      "cover": "Capa Comum",
+      "language": "Português"
+    },
+    {
+      "id": "19",
+      "title": "Diáspora",
+      "description": "O aprendiz Trizno é procurado pelo assassinato de seus mestres: três dentre os mais poderosos magos existentes no mundo. Como se não bastasse, roubou armas lendárias e reuniu um grupo para se opor ao reino e impedi-lo de recuperar suas relíquias. O rei, frustrado por anos falhando em capturar esses criminosos, ordena uma investida impiedosa para subjugar o assassino e ladrão. Contudo, mesmo encurralado por centenas de soldados e magos, ninguém imaginava que Trizno poderia escapar usando uma magia quase esquecida e a mais antiga do seu mundo, a Diáspora.",
+      "price": 1000,
+      "discountPercent": 10,
+      "category": "Ficção Científica e Fantasia",
+      "publishedYear": 2019,
+      "author": "Leandro Chagas",
+      "publisher": "Coerência",
+      "pages": 324,
+      "cover": "Capa Comum",
+      "language": "Português"
+    },
+    {
+      "title": "Teoria de Unificação",
+      "author": "Luiz Carlos de Almeida",
+      "genre": "ficcao",
+      "price": 1000,
+      "description": "O aprendiz Trizno é procurado pelo assassinato de seus mestres: três dentre os mais poderosos magos existentes no mundo. Como se não bastasse, roubou armas lendárias e reuniu um grupo para se opor ao reino e impedi-lo de recuperar suas relíquias. O rei, frustrado por anos falhando em capturar esses criminosos, ordena uma investida impiedosa para subjugar o assassino e ladrão. Contudo, mesmo encurralado por centenas de soldados e magos, ninguém imaginava que Trizno poderia escapar usando uma magia quase esquecida e a mais antiga do seu mundo, a Diáspora.",
+      "id": "20"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "modulojsvemser-livraria",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "sass --watch styles/scss:styles/css",
+    "start": "json-server --watch ./data/db.json --port 3000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^1.0.0-alpha.21",
+    "uuid": "^9.0.1"
+  }
+}

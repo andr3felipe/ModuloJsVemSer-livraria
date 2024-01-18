@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="xxxxxxxxxxxxxxxxxxxxxxxxxxxx" />
+    <meta name="keywords" content="xxxxxxxxxxxxxxxxxx" />
+    <meta name="author" content="Grupo 1" />
+    <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
+    <title>BibliotecaVirtual | Início</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles/css/global.css" />
+    <link rel="stylesheet" href="styles/css/index.css" />
+    <link rel="stylesheet" href="./styles/css/footer.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="./js/global.js"></script>
+    <script src="./js/index.js"></script>
+  </head>
+  <body>
+    <header class="sticky-top header">
+      <nav class="navbar mx-auto">
+        <div class="container-fluid">
+          <div class="d-flex justify-content-between w-100 align-items-center">
+            <div class="d-flex align-items-center justify-content-center">
+              <a
+                class="navbar-brand"
+                href="#"
+                aria-label="Ir para página inicial"
+                ><i class="ph ph-book-open-text navbar-logotipo"></i
+              ></a>
+              <div class="dropdown custom-dropdown">
+                <button
+                  class="btn dropdown-toggle d-flex align-items-center justify-content-center gap-1 custom-navbar-icon"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="ph ph-list fs-4"></i> Categorias
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Informática</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      >Ficção Científica e Fantasia</a
+                    >
+                  </li>
+                  <li><a class="dropdown-item" href="#">Terror</a></li>
+                </ul>
+              </div>
+            </div>
+            <div
+              id="desktop-navbar"
+              class="d-flex align-items-center justify-content-center gap-2 desktop-navbar"
+            >
+              <a
+                id="login-button-desktop"
+                href="./pages/login.html"
+                class="btn d-flex align-items-center justify-content-center gap-1 custom-navbar-icon"
+              >
+                <i class="ph ph-sign-in fs-4"></i>
+                Login
+              </a>
+              <a
+                id="favorites"
+                href="./pages/favorites.html"
+                class="btn d-flex align-items-center justify-content-center gap-1 custom-navbar-icon"
+              >
+                <i class="ph ph-heart fs-4"></i>
+                Favoritos
+              </a>
+              <a
+                id="profile-button-desktop"
+                href="./pages/admin.html"
+                class="btn d-flex align-items-center justify-content-center gap-1 custom-navbar-icon"
+              >
+                <i class="ph ph-user fs-4"></i>
+                Meu perfil
+              </a>
+              <a
+                href="./pages/cart.html"
+                class="btn d-flex align-items-center justify-content-center gap-1 custom-navbar-icon"
+              >
+                <i class="ph ph-shopping-cart fs-4" id="cart-icon"></i>
+                Minha cesta
+              </a>
+            </div>
+            <button
+              class="navbar-toggler custom-navbar-toggler"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasNavbar"
+              aria-controls="offcanvasNavbar"
+              aria-label="Toggle navigation"
+            >
+              <i class="ph ph-list custom-navbar-icon"></i>
+            </button>
+          </div>
+
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <div class="offcanvas-title" id="offcanvasNavbarLabel">
+                <a class="navbar-brand" href="#"
+                  ><i class="ph ph-book-open-text fs-1"></i
+                ></a>
+              </div>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item text-center custom-nav-item-mobile">
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >Início</a
+                  >
+                </li>
+                <li
+                  class="nav-item text-center custom-nav-item-mobile"
+                  id="login-button"
+                >
+                  <a class="nav-link" href="./pages/login.html">Login</a>
+                </li>
+                <li class="nav-item text-center custom-nav-item-mobile">
+                  <a class="nav-link" href="./pages/cart.html">Minha cesta</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <form
+          class="mx-auto pt-2 pb-2 d-flex align-items-center justify-content-center custom-form-container"
+        >
+          <input
+            type="text"
+            class="form-control custom-search-bar pe-5 text-el"
+            placeholder="O que você está buscando ?"
+          />
+          <button
+            type="submit"
+            class="custom-magnifying-glass"
+            aria-label="Pesquisar"
+          >
+            <i class="ph ph-magnifying-glass"></i>
+          </button>
+        </form>
+      </nav>
+    </header>
+
+    <div
+      id="carouselExampleIndicators"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="0"
+          class="active custom-indicator"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          class="custom-indicator"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          class="custom-indicator"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="./assets/carousel-img.webp"
+            srcset="
+              ./assets/carousel-img-mobile.webp 500w,
+              ./assets/carousel-img.webp        850w
+            "
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="./assets/carousel-img-2.webp"
+            srcset="
+              ./assets/carousel-img-2-mobile.webp 500w,
+              ./assets/carousel-img-2.webp        850w
+            "
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="./assets/carousel-img-3.webp"
+            srcset="
+              ./assets/carousel-img-3-mobile.webp 500w,
+              ./assets/carousel-img-3.webp        850w
+            "
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev custom-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev"
+      >
+        <i class="ph-bold ph-caret-left custom-prev" aria-hidden="true"></i>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next"
+      >
+        <i class="ph-bold ph-caret-right custom-next" aria-hidden="true"></i>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <main>
+      <h1>Destaques</h1>
+
+      <section class="section">
+        <h2>Mais vendidos</h2>
+
+        <div class="custom-cards-container" id="best-sellers"></div>
+      </section>
+
+      <section class="section">
+        <h2>Você pode se interessar</h2>
+
+        <div class="custom-cards-container" id="you-might-be-interested"></div>
+      </section>
+
+      <section class="section">
+        <h2>Vistos recentemente</h2>
+
+        <div class="custom-cards-container" id="recently-seen"></div>
+      </section>
+    </main>
+
+    <footer>
+      <div>
+          <p><strong>Atendimento</strong></p>
+          <p>Política de Vendas, Trocas e Privacidade</p>
+          <p>Termos e Condições de Compra</p>
+          <p>Fale Conosco</p>
+      </div>
+      <div>
+          <p><strong>Institucional</strong></p>
+          <p>Sobre a BibliotecaVirtual</p>
+          <p>Relações com Investidores</p>
+          <p>Fale Conosco</p>
+          <p>Trabalho Conosco</p>
+          <p>Seja um Parceiro</p>
+      </div>
+      <div>
+          <p><strong>Formas de pagamento</strong></p>
+          <div class="imgs">
+          <img src="../img/amEx.jpg" alt="Forma de pagamento am-ex">
+          <img src="../img/masterCard.jpg" alt="Forma de pagamento masterCard">
+          <img src="../img/payment-elo___25267c8c59652a9140192cf914c688bb.jpg" alt="Forma de pagamento elo">
+          <img src="../img/valeCultura.jpg" alt="Forma de pagamento vale cultura">
+          <img src="../img/visa.jpg" alt="Forma de pagamento visa">
+          <img src="../img/hiper.jpg" alt="Forma de pagamento hiper">
+          </div>
+      </div>
+      <div>
+          <p><strong>Redes sociais</strong></p>
+          <a href="#" aria-label="Nossa página no facebook"><i class="ph ph-facebook-logo"></i></a>
+          <a href="#" aria-label="Nossa página no instagram"><i class="ph ph-instagram-logo"></i></a>
+          <a href="#" aria-label="Nossa página no linkedin"><i class="ph ph-linkedin-logo"></i></a>
+          <a href="#" aria-label="Nossa página no twitter"><i class="ph ph-twitter-logo"></i></a>
+      </div>
+  </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

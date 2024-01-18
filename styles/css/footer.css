@@ -1,0 +1,91 @@
+p {
+    width: fit-content;
+}
+
+html {
+    height: 100%;
+}
+
+.content {
+    flex: 1;
+}
+
+footer {
+    background-color: #0060b1;
+    color: white;
+    display: flex;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 100px;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 200px;
+}
+
+footer div > p:first-child strong {
+    font-size: 20px;
+}
+
+.imgs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; 
+    justify-content: flex-start; 
+    max-width: 200px;
+} 
+
+footer div a:not(:first-child) {
+    color: white;
+    text-decoration: none;
+}
+ 
+div a i {
+    font-size: 25px;
+}
+
+.imgs img {
+    height: 30px;
+    width: 60px;
+}
+
+footer div p:not(:first-child) {
+    cursor: pointer; 
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 20px;
+        gap: 50px; 
+    }
+}
+
+@media (max-width: 481px) {
+    footer {
+        flex-direction: column;
+        align-items: flex-start; 
+        padding: 20px; 
+    }
+
+    footer div {
+        width: 100%;
+        text-align: left; 
+        margin-bottom: 20px; 
+    }
+
+    footer div.institucional,
+    footer div.institucional p, 
+    footer div.institucional a {
+        text-align: left;
+    }
+
+    .imgs {
+        justify-content: flex-start;
+    }
+
+    footer div.social-icons a {
+        margin: 0 5px;
+    }
+}
