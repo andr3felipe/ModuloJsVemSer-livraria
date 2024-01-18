@@ -1,0 +1,422 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #fff;
+}
+
+.header {
+  background-color: #0060b1;
+}
+
+.navbar {
+  color: #fff;
+  padding: 0.75rem 1rem;
+  max-width: 90rem;
+}
+.navbar .navbar-logotipo {
+  font-size: 2rem;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+.navbar .navbar-logotipo:hover {
+  color: black;
+}
+.navbar .custom-navbar-toggler {
+  border-color: white;
+}
+.navbar .custom-navbar-icon {
+  transition: all 0.3s ease-in-out;
+  color: white;
+  font-weight: 500;
+}
+.navbar .custom-navbar-icon:hover {
+  color: black;
+}
+.navbar .custom-form-container {
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+}
+.navbar .custom-form-container ::-webkit-input-placeholder {
+  text-align: center;
+}
+.navbar .custom-form-container .custom-search-bar {
+  text-overflow: ellipsis;
+}
+.navbar .custom-magnifying-glass {
+  border: none;
+  position: absolute;
+  right: 1rem;
+  background-color: transparent;
+  display: inline-block;
+  font-size: 1.5rem;
+}
+.navbar .custom-nav-item-mobile:hover {
+  background-color: #0060b1;
+}
+.navbar .custom-nav-item-mobile:hover > a {
+  color: white;
+}
+
+#cart-icon {
+  position: relative;
+}
+
+#cart-count {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -15px;
+  left: -10px;
+  height: 20px;
+  background-color: rgb(227, 82, 20);
+  color: white;
+  padding: 0 6px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+@media (min-width: 750px) {
+  .custom-navbar-toggler {
+    display: none;
+  }
+}
+@media (max-width: 750px) {
+  .desktop-navbar {
+    display: none !important;
+  }
+}
+main {
+  margin-top: 10rem;
+  display: flex;
+  gap: 120px;
+}
+main h2 {
+  margin-bottom: 50px;
+}
+main aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px;
+  gap: 30px;
+}
+main aside .user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main aside .user-info h3 {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+main aside .user-info p {
+  font-size: 1.1rem;
+}
+main aside .user-info img {
+  max-width: 110px;
+  border-radius: 50%;
+}
+main aside ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+@media (max-width: 800px) {
+  main aside ul {
+    flex-direction: row;
+  }
+}
+main aside ul .active-item {
+  border-color: #0060b1;
+  font-weight: 500;
+}
+main aside ul li {
+  font-size: 1.1rem;
+  border-left: 4px solid transparent;
+  padding: 10px;
+  cursor: pointer;
+}
+main .active-section {
+  display: flex;
+}
+main .personal-data-container,
+main .manage-books-container,
+main .add-book-container {
+  flex: 1;
+  padding-top: 20px;
+}
+main .personal-data-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+main .personal-data-container .personal-data {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 50px;
+  border: 1px solid #0060b1;
+  padding: 30px;
+  border-radius: 4px;
+}
+@media (max-width: 420px) {
+  main .personal-data-container .personal-data {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+main .personal-data-container .personal-data .data-field {
+  font-size: 1.2rem;
+}
+main .personal-data-container .personal-data .data-field label {
+  font-weight: 500;
+}
+main .personal-data-container .personal-data .email-field {
+  grid-column: span 2;
+}
+main .manage-books-container {
+  display: none;
+  flex-direction: column;
+}
+@media (max-width: 800px) {
+  main .manage-books-container {
+    align-items: center;
+  }
+}
+main .manage-books-container .custom-nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+main .manage-books-container .custom-nav .custom-nav-btn {
+  background-color: #0060b1;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 30px;
+  transition: 0.2s;
+}
+main .manage-books-container .custom-nav .custom-nav-btn:hover {
+  opacity: 0.9;
+}
+main .manage-books-container .custom-nav button img {
+  width: 20px;
+}
+main .manage-books-container .cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+@media (max-width: 800px) {
+  main .manage-books-container .cards {
+    justify-content: center;
+  }
+}
+main .manage-books-container .cards .custom-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-flow: column;
+  border: 1px solid #e5e9f2;
+  max-width: 230px;
+  min-width: 230px;
+  border-radius: 0.25rem;
+  background-color: white;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+  height: 410px;
+}
+main .manage-books-container .cards .custom-card:hover {
+  box-shadow: 5px 6px 7px rgba(0, 0, 0, 0.15);
+}
+main .manage-books-container .cards .custom-card .custom-card-head {
+  padding: 12px 12px 0px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  position: relative;
+}
+main .manage-books-container .cards .custom-card .custom-card-image {
+  width: 100%;
+  max-height: 200px;
+}
+main .manage-books-container .cards .custom-card .custom-card-image > img {
+  object-fit: cover;
+  width: 100%;
+}
+main .manage-books-container .cards .custom-card .custom-card-body {
+  width: 100%;
+  padding: 0px 16px;
+}
+main .manage-books-container .cards .custom-card .custom-card-body p {
+  margin-bottom: 0;
+}
+main .manage-books-container .cards .custom-card .custom-card-body .title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.125rem;
+  color: rgb(66, 70, 77);
+  margin-bottom: 1rem;
+}
+main .manage-books-container .cards .custom-card .custom-card-body .custom-card-price {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+main .manage-books-container .cards .custom-card .custom-card-body .custom-card-price .price-off {
+  font-size: 1rem;
+  line-height: 1.375rem;
+  font-weight: 500;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  color: #000;
+  text-decoration: line-through;
+}
+main .manage-books-container .cards .custom-card .custom-card-body .custom-card-price .price {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #0060b1;
+}
+main .manage-books-container .cards .custom-card .add-to-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  background-color: #0060b1;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  transition: all 200ms ease-in-out;
+}
+main .manage-books-container .cards .custom-card .add-to-cart:hover {
+  opacity: 0.8;
+}
+main .manage-books-container .cards .custom-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 1rem;
+  padding: 0 0.75rem 0.75rem;
+  width: 100%;
+}
+main .manage-books-container .cards .manage-buttons {
+  display: flex;
+  justify-content: end;
+}
+main .manage-books-container .cards .manage-buttons button {
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 10px;
+  transition: 0.2s;
+}
+main .manage-books-container .cards .manage-buttons button:hover {
+  background-color: rgba(208, 207, 207, 0.681);
+}
+main .manage-books-container .cards .manage-buttons .manage-img {
+  width: 20px;
+}
+main #addBookModal {
+  color: #000;
+}
+main .add-book-container {
+  display: none;
+  flex-direction: column;
+}
+main .add-book-container form {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto auto;
+  gap: 20px;
+}
+main .add-book-container form label {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+main .add-book-container form input {
+  width: 100%;
+  padding: 5px 10px;
+}
+main .add-book-container form .bookDescription {
+  grid-column: span 2;
+}
+main .add-book-container form .custom-select {
+  width: 100%;
+}
+main .add-book-container form button {
+  background-color: #0060b1;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 30px;
+  transition: 0.2s;
+}
+main .add-book-container form button:hover {
+  opacity: 0.9;
+}
+main form {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto auto;
+  gap: 20px;
+}
+main form label {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+main form input {
+  width: 100%;
+  padding: 5px 10px;
+}
+main form .bookDescription {
+  grid-column: span 2;
+}
+main form .custom-select {
+  width: 100%;
+}
+main form button {
+  background-color: #0060b1;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 30px;
+  transition: 0.2s;
+}
+main form button:hover {
+  opacity: 0.9;
+}
+
+@media screen and (max-width: 800px) {
+  main {
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+  }
+}
+
+/*# sourceMappingURL=admin.css.map */
