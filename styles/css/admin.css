@@ -94,8 +94,25 @@ body {
     display: none !important;
   }
 }
+.custom-heading {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+.custom-heading > h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.custom-heading i {
+  margin-top: -8px;
+  font-size: 2rem;
+  color: #ff6500;
+}
+
 main {
-  margin-top: 10rem;
+  margin-top: 5rem;
   display: flex;
   gap: 120px;
 }
