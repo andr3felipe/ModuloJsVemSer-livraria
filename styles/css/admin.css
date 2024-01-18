@@ -94,7 +94,7 @@ main .manage-books-container {
   flex-direction: column;
 }
 main .manage-books-container .custom-nav {
-  padding-right: 70px;
+  max-width: 93%;
 }
 main .manage-books-container .custom-nav .custom-nav-btn {
   background-color: #893429;
@@ -106,11 +106,6 @@ main .manage-books-container .custom-nav .custom-nav-btn {
 }
 main .manage-books-container .custom-nav .custom-nav-btn:hover {
   opacity: 0.9;
-}
-@media (max-width: 1410px) {
-  main .manage-books-container .custom-nav {
-    padding-right: 218px;
-  }
 }
 main .manage-books-container .cards {
   display: flex;

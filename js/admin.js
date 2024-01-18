@@ -1,65 +1,14 @@
-let books = [
-    { 
-        id: 1,
-        image: 'https://m.media-amazon.com/images/I/71FZSPKM0lL._AC_UF1000,1000_QL80_.jpg', 
-        title: 'Dom Casmurro', 
-        author: 'Machado de Assis', 
-        genre: 'Romance', 
-        price: '30.50', 
-        description: 'Clássico da literatura brasileira.' 
-    },
-    { 
-        id: 2,
-        image: 'https://m.media-amazon.com/images/I/71FZSPKM0lL._AC_UF1000,1000_QL80_.jpg', 
-        title: '1984', 
-        author: 'George Orwell', 
-        genre: 'Ficção Científica', 
-        price: '25.99', 
-        description: 'Distopia que aborda questões políticas e sociais.' 
-    },
-    { 
-        id: 3,
-        image: 'https://m.media-amazon.com/images/I/71FZSPKM0lL._AC_UF1000,1000_QL80_.jpg', 
-        title: 'O Senhor dos Anéis', 
-        author: 'J.R.R. Tolkien', 
-        genre: 'Fantasia', 
-        price: '40.75', 
-        description: 'Trilogia épica de fantasia.' 
-    },
-    { 
-        id: 4,
-        image: 'https://m.media-amazon.com/images/I/71FZSPKM0lL._AC_UF1000,1000_QL80_.jpg', 
-        title: 'Harry Potter e a Pedra Filosofal', 
-        author: 'J.K. Rowling', 
-        genre: 'Fantasia', 
-        price: '22.90', 
-        description: 'Início da saga do jovem bruxo.' 
-    },
-    { 
-        id: 5,
-        image: 'https://m.media-amazon.com/images/I/71FZSPKM0lL._AC_UF1000,1000_QL80_.jpg', 
-        title: 'Crime e Castigo', 
-        author: 'Fiódor Dostoiévski', 
-        genre: 'Romance', 
-        price: '28.30', 
-        description: 'Exploração psicológica de um crime.' 
-    },
-    { 
-        id: 6,
-        image: 'https://m.media-amazon.com/images/I/71FZSPKM0lL._AC_UF1000,1000_QL80_.jpg', 
-        title: 'Orgulho e Preconceito', 
-        author: 'Jane Austen', 
-        genre: 'Romance', 
-        price: '18.99', 
-        description: 'Romance clássico sobre amor e preconceito social.' 
-    }
-];
+let books = [];
 
-fetch('http://localhost:3000/books').then(data => console.log(data.json()))
+const titleInput = document.getElementById('bookTitle');
+const authorInput = document.getElementById('bookAuthor');
+const genreInput = document.getElementById('bookGenre');
+const priceInput = document.getElementById('bookPrice');
+const descriptionInput = document.getElementById('bookDescription');
+const modal = new bootstrap.Modal(document.getElementById('addBookModal'));
+const form = document.querySelector('form');
 
 document.addEventListener('DOMContentLoaded', () => {
-    renderBooks();
-
     const sidebarItems = document.querySelectorAll(".sidebarItem");
     const sections = document.querySelectorAll('section');
 
@@ -78,30 +27,49 @@ document.addEventListener('DOMContentLoaded', () => {
                 section.style.display = 'none';
             }
         });
-        });
     });
+
+    fetch('http://localhost:3000/books')
+        .then(response => response.json())
+        .then(data => {
+            books = data;
+            renderBooks();
+        })
+        .catch(err => console.error('Erro ao obter os dados do servidor: ', err));
+
+});
 });
 
-const titleInput = document.getElementById('bookTitle');
-const authorInput = document.getElementById('bookAuthor');
-const genreInput = document.getElementById('bookGenre');
-const priceInput = document.getElementById('bookPrice');
-const descriptionInput = document.getElementById('bookDescription');
-const modal = new bootstrap.Modal(document.getElementById('addBookModal'));
-
 function addBook() {
-    books.push(
-        {
-            id: books.length + 1,
-            image: 'https://m.media-amazon.com/images/I/71FZSPKM0lL._AC_UF1000,1000_QL80_.jpg', 
-            title: titleInput.value, 
-            author: authorInput.value, 
-            genre: genreInput.value, 
-            price: priceInput.value, 
-            description: descriptionInput.value
-        }
-    )
-    renderBooks();
+    const book = {
+        image: 'https://m.media-amazon.com/images/I/71FZSPKM0lL._AC_UF1000,1000_QL80_.jpg',
+        title: titleInput.value,
+        author: authorInput.value,
+        genre: genreInput.value,
+        price: priceInput.value,
+        description: descriptionInput.value
+    };
+
+    fetch('http://localhost:3000/books', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(book),
+    })
+        .then(response => response.json())
+        .then(data => {
+            books.push(data);
+            renderBooks();
+            modal.hide();
+        })
+        .catch(error => console.error('Erro ao adicionar livro:', error));
+    
+    titleInput.value = '';
+    authorInput.value = '';
+    genreInput.value = '';
+    priceInput.value = '';
+    descriptionInput.value = '';
 }
 
 function renderBooks() {
@@ -115,11 +83,11 @@ function renderBooks() {
                     <h5 class="card-title">${book.title}</h5>
                     <p class="card-text">${book.description}</p>
                     <div class="manage-buttons">
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#addBookModal">
-                        <img class="manage-img" src="../assets/pencil.png" alt="">
+                        <button type="button" class="edit-btn" data-bs-toggle="modal" data-bs-target="#editBookModal">
+                            <img class="manage-img" onclick="editBook('${book.title}')" src="../assets/pencil.png" alt="">
                         </button>
                         <button>
-                        <img class="manage-img" src="../assets/trash.png" alt=""></button>
+                            <img class="manage-img" id="removeBtn" src="../assets/trash.png" alt=""></button>
                         </button>
                     </div>
                 </div>
@@ -130,12 +98,8 @@ function renderBooks() {
     modal.hide();
 }
 
-function editBook() {
-
-}
-
 function deleteBook() {
-
+    
 }
 
 
