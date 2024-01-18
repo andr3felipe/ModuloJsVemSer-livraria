@@ -43,6 +43,10 @@ main {
             flex-direction: column;
             gap: 1rem;
 
+            @media (max-width: 800px) {
+                flex-direction: row;
+            }
+
             .active-item {
                 border-color: $primary;
                 font-weight: 500;
@@ -76,15 +80,20 @@ main {
         .personal-data {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-rows: repeat(3, 1fr);
             gap: 50px;
             border: 1px solid $primary;
             padding: 30px;
             border-radius: $radii;
 
+            @media (max-width: 420px) {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
             .data-field {
                 font-size: 1.2rem;
-
+                
                 label {
                     font-weight: 500;
                 }
@@ -100,7 +109,14 @@ main {
         display: none;
         flex-direction: column;
 
+        @media (max-width: 800px) {
+            align-items: center;
+        }
+
         .custom-nav {
+            display: flex;
+            flex-wrap: wrap;
+
             .custom-nav-btn {
                 background-color: $primary;
                 color: $text-white;
@@ -115,7 +131,6 @@ main {
             }
 
             button {
-                
                 img {
                     width: 20px;
                 }
@@ -126,6 +141,10 @@ main {
             display: flex;
             flex-wrap: wrap;
             gap: 40px;
+
+            @media (max-width: 800px) {
+                justify-content: center;
+            }
 
             .custom-card {
                 display: flex;
@@ -266,6 +285,10 @@ main {
         }
     }
 
+    #addBookModal {
+        color: $text-dark;
+    }
+
     .add-book-container {
         display: none;
         flex-direction: column;
@@ -344,6 +367,22 @@ main {
 
         button:hover {
             opacity: 0.9;
+        }
+    }
+}
+
+@media screen {
+    main {
+        @media (max-width: 800px) {
+            flex-direction: column;
+            gap: 0;
+            align-items: center;
+        }
+    }
+
+    aside {
+        @media (max-width: 800px) {
+            
         }
     }
 }

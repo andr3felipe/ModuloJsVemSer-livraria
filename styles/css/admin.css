@@ -9,6 +9,91 @@ body {
   background-color: #fff;
 }
 
+.header {
+  background-color: #0060b1;
+}
+
+.navbar {
+  color: #fff;
+  padding: 0.75rem 1rem;
+  max-width: 90rem;
+}
+.navbar .navbar-logotipo {
+  font-size: 2rem;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+.navbar .navbar-logotipo:hover {
+  color: black;
+}
+.navbar .custom-navbar-toggler {
+  border-color: white;
+}
+.navbar .custom-navbar-icon {
+  transition: all 0.3s ease-in-out;
+  color: white;
+  font-weight: 500;
+}
+.navbar .custom-navbar-icon:hover {
+  color: black;
+}
+.navbar .custom-form-container {
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+}
+.navbar .custom-form-container ::-webkit-input-placeholder {
+  text-align: center;
+}
+.navbar .custom-form-container .custom-search-bar {
+  text-overflow: ellipsis;
+}
+.navbar .custom-magnifying-glass {
+  border: none;
+  position: absolute;
+  right: 1rem;
+  background-color: transparent;
+  display: inline-block;
+  font-size: 1.5rem;
+}
+.navbar .custom-nav-item-mobile:hover {
+  background-color: #0060b1;
+}
+.navbar .custom-nav-item-mobile:hover > a {
+  color: white;
+}
+
+#cart-icon {
+  position: relative;
+}
+
+#cart-count {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -15px;
+  left: -10px;
+  height: 20px;
+  background-color: rgb(227, 82, 20);
+  color: white;
+  padding: 0 6px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+@media (min-width: 750px) {
+  .custom-navbar-toggler {
+    display: none;
+  }
+}
+@media (max-width: 750px) {
+  .desktop-navbar {
+    display: none !important;
+  }
+}
 main {
   margin-top: 10rem;
   display: flex;
@@ -47,8 +132,13 @@ main aside ul {
   flex-direction: column;
   gap: 1rem;
 }
+@media (max-width: 800px) {
+  main aside ul {
+    flex-direction: row;
+  }
+}
 main aside ul .active-item {
-  border-color: #893429;
+  border-color: #0060b1;
   font-weight: 500;
 }
 main aside ul li {
@@ -74,11 +164,17 @@ main .personal-data-container {
 main .personal-data-container .personal-data {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
   gap: 50px;
-  border: 1px solid #893429;
+  border: 1px solid #0060b1;
   padding: 30px;
   border-radius: 4px;
+}
+@media (max-width: 420px) {
+  main .personal-data-container .personal-data {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 main .personal-data-container .personal-data .data-field {
   font-size: 1.2rem;
@@ -93,8 +189,17 @@ main .manage-books-container {
   display: none;
   flex-direction: column;
 }
+@media (max-width: 800px) {
+  main .manage-books-container {
+    align-items: center;
+  }
+}
+main .manage-books-container .custom-nav {
+  display: flex;
+  flex-wrap: wrap;
+}
 main .manage-books-container .custom-nav .custom-nav-btn {
-  background-color: #893429;
+  background-color: #0060b1;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -111,6 +216,11 @@ main .manage-books-container .cards {
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
+}
+@media (max-width: 800px) {
+  main .manage-books-container .cards {
+    justify-content: center;
+  }
 }
 main .manage-books-container .cards .custom-card {
   display: flex;
@@ -184,7 +294,7 @@ main .manage-books-container .cards .custom-card .custom-card-body .custom-card-
   line-height: 1.875rem;
   font-weight: 700;
   text-decoration: none;
-  color: #893429;
+  color: #0060b1;
 }
 main .manage-books-container .cards .custom-card .add-to-cart {
   display: flex;
@@ -194,7 +304,7 @@ main .manage-books-container .cards .custom-card .add-to-cart {
   flex: 1;
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
-  background-color: #893429;
+  background-color: #0060b1;
   color: white;
   font-size: 0.875rem;
   font-weight: 600;
@@ -231,6 +341,9 @@ main .manage-books-container .cards .manage-buttons button:hover {
 main .manage-books-container .cards .manage-buttons .manage-img {
   width: 20px;
 }
+main #addBookModal {
+  color: #000;
+}
 main .add-book-container {
   display: none;
   flex-direction: column;
@@ -256,7 +369,7 @@ main .add-book-container form .custom-select {
   width: 100%;
 }
 main .add-book-container form button {
-  background-color: #893429;
+  background-color: #0060b1;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -287,7 +400,7 @@ main form .custom-select {
   width: 100%;
 }
 main form button {
-  background-color: #893429;
+  background-color: #0060b1;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -296,6 +409,14 @@ main form button {
 }
 main form button:hover {
   opacity: 0.9;
+}
+
+@media screen and (max-width: 800px) {
+  main {
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+  }
 }
 
 /*# sourceMappingURL=admin.css.map */

@@ -72,12 +72,12 @@ function addBook() {
     .then(response => response.json())
     .then(data => {
         books.push(data);
+        alert('Livro adicionado com sucesso');
         renderBooks();
     })
     .catch(err => console.error('Erro ao adicionar livro: ', err));
 }
 
-// Função para formatar o preço como moeda
 function currencyFormat(value) {
     return 'R$ ' + value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
 }
@@ -188,12 +188,10 @@ function editBook(id) {
     })
     .then(response => response.json())
     .then(data => {
-        // Atualiza o livro no array e re-renderiza a lista de livros
         const index = books.findIndex(book => book.id == id);
-        if (index !== -1) {
-            books[index] = data;
-            renderBooks();
-        }
+        books[index] = data;
+        renderBooks();
+        alert('Livro editado com sucesso');
     })
     .catch(err => console.error('Erro ao editar livro: ', err));
 
@@ -208,6 +206,7 @@ function deleteBook(id) {
     .then(() => {
         books = books.filter(book => book.id != id);
         renderBooks();
+        alert('Livro removido com sucesso');
     })
     .catch(err => console.error('Erro ao excluir livro: ', err));
 }
