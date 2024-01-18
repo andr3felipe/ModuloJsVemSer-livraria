@@ -22,7 +22,7 @@ function goToLogin() {
   window.location.href = "../pages/login.html";
 }
 
-function addToCart(bookId) {
+async function addToCart(bookId) {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const book = books.find((book) => book.id == bookId);
 
@@ -41,6 +41,7 @@ function addToCart(bookId) {
   localStorage.setItem("cart", JSON.stringify([...cart]));
 
   renderCartCounter();
+  await updateUser();
 }
 
 let books = [];

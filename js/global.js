@@ -7,6 +7,20 @@ function logout() {
   window.location.href = "../pages/login.html";
 }
 
+async function updateUser() {
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  const response = await fetch(`http://localhost:3000/users/${user.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(user),
+  });
+
+  return await response.json();
+}
+
 function renderCartCounter() {
   const cartItems = getCart().length;
   if (cartItems > 0) {
@@ -62,4 +76,5 @@ exports = {
   verifyLogin,
   fixButtons,
   logout,
+  updateUser,
 };

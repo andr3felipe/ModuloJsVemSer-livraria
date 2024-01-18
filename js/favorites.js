@@ -32,7 +32,7 @@ function renderFavorities() {
   document.getElementById("custom-cards-container").innerHTML = items;
 }
 
-function updateUserData(bookId, action) {
+async function updateUserData(bookId, action) {
   let user = JSON.parse(localStorage.getItem("user"));
 
   if (user && action === "add") {
@@ -45,6 +45,7 @@ function updateUserData(bookId, action) {
 
   localStorage.setItem("user", JSON.stringify(user));
   renderFavorities();
+  await updateUser();
 }
 
 function renderBook(book) {
