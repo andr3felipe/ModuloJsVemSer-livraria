@@ -2,7 +2,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   renderBooks();
 
   if (verifyLogin()) {
-    removeLoginButton();
+    fixButtons();
+  } else {
+    document.getElementById("profile-button-desktop").remove();
   }
 });
 
@@ -10,11 +12,6 @@ async function getBooks() {
   const response = await fetch("http://localhost:3000/books");
   const books = await response.json();
   return books;
-}
-
-function removeLoginButton() {
-  document.getElementById("login-button").remove();
-  document.getElementById("login-button-desktop").remove();
 }
 
 function randomGenerator(length) {

@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     document.body.style.display = "block";
     renderFavorities();
+    fixButtons();
   }
 });
 

@@ -2,6 +2,11 @@ document.addEventListener("DOMContentLoaded", () => {
   renderCartCounter();
 });
 
+function logout() {
+  localStorage.removeItem("user");
+  window.location.href = "../pages/login.html";
+}
+
 function renderCartCounter() {
   const cartItems = getCart().length;
   if (cartItems > 0) {
@@ -35,10 +40,26 @@ function verifyLogin() {
   return user != null;
 }
 
+function fixButtons() {
+  document.getElementById("login-button")?.remove();
+  document.getElementById("login-button-desktop")?.remove();
+
+  document.getElementById("desktop-navbar").innerHTML += `
+  <a
+  onclick="logout()"  
+  class="btn d-flex align-items-center justify-content-center gap-1 custom-navbar-icon"
+>
+  <i class="ph ph-sign-out fs-4"></i>
+  Sair
+</a>`;
+}
+
 exports = {
   renderCartCounter,
   getCart,
   currencyFormat,
   getUserData,
   verifyLogin,
+  fixButtons,
+  logout,
 };
