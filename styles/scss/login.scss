@@ -1,0 +1,89 @@
+@import "./global.scss";
+
+body {
+  background-color: $background;
+}
+
+main {
+  max-width: 1440px;
+  margin: 5rem auto 2rem;
+  padding: 2rem;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 5rem;
+  flex-flow: row wrap;
+
+  > img {
+    padding: 1rem;
+  }
+
+  > h1 {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    position: relative;
+    font-weight: 700;
+    line-height: 2.125rem;
+
+    &::after {
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+      content: "";
+      width: 5rem;
+      border: 2px solid $primary;
+    }
+  }
+
+  > div {
+    flex: 1;
+    flex-basis: 300px;
+    max-width: 400px;
+  }
+
+  form {
+    margin-top: 2rem;
+    width: 100%;
+
+    #forgot-password {
+      display: block;
+      text-align: end;
+      width: 100%;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+#login-button {
+  background-color: $primary;
+  margin-top: 1.5rem;
+  color: white;
+  transition: all 0.3s ease-in-out;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 8px 42px;
+  font-weight: 600;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.sign-in {
+  font-size: 1rem;
+  text-align: center;
+  margin: 2rem 0;
+  font-weight: 300;
+
+  .register-link {
+    color: $orange-text;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}

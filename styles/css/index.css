@@ -10,7 +10,7 @@ body {
 }
 
 .header {
-  background-color: #893429;
+  background-color: #0060b1;
 }
 
 .navbar {
@@ -57,7 +57,7 @@ body {
   font-size: 1.5rem;
 }
 .navbar .custom-nav-item-mobile:hover {
-  background-color: #893429;
+  background-color: #0060b1;
 }
 .navbar .custom-nav-item-mobile:hover > a {
   color: white;
@@ -203,7 +203,7 @@ h1 {
   line-height: 1.875rem;
   font-weight: 700;
   text-decoration: none;
-  color: #893429;
+  color: #0060b1;
 }
 .custom-card .custom-card-footer {
   display: flex;
@@ -221,7 +221,7 @@ h1 {
   flex: 1;
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
-  background-color: #893429;
+  background-color: #0060b1;
   color: white;
   font-size: 0.875rem;
   font-weight: 600;
