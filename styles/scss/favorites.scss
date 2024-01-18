@@ -1,46 +1,27 @@
 @import "./global.scss";
 
-.custom-prev,
-.custom-next {
-  color: black;
-  background-color: white;
-  border-radius: $radii;
-  padding: 0.25rem 0.125rem;
-  font-size: 2.5rem;
-}
-
-.custom-indicator {
-  border-radius: 100%;
-  height: 1rem !important;
-  width: 1rem !important;
-}
-
-.carousel-indicators button[class*="active"] {
-  background-color: black;
-}
-
-body {
-  background-color: $background;
-}
-
 main {
   max-width: 1440px;
-  margin: 2rem auto;
+  margin: 5rem auto 2rem;
   padding: 2rem;
 }
 
-h1 {
-  text-align: center;
-}
+.custom-heading {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
 
-.section {
-  margin: 3rem 0 4rem;
+  > h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
 
-  > h2 {
-    font-size: 1.375rem;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    font-weight: 600;
+  i {
+    margin-top: -8px;
+    font-size: 2rem;
+    color: $orange-weak;
   }
 }
 
@@ -181,4 +162,14 @@ h1 {
       min-width: 2rem;
     }
   }
+}
+
+.empty-favorities {
+  text-align: center;
+}
+
+.custom-card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
