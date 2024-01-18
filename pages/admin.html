@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="xxxxxxxxxxxxxxxxxxxxxxxxxxxx" />
+    <meta name="keywords" content="xxxxxxxxxxxxxxxxxx" />
+    <meta name="author" content="Grupo 1" />
+    <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
+    <title>Panato | Administrador</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../styles/css/global.css" />
+    <link rel="stylesheet" href="../styles/css/admin.css">
+  </head>
+  <body>
+    <main class="container">
+        <aside>
+            <div class="user-info">
+                <img src="../assets/user.png" alt="imagem de usuário sem foto">
+                <h3>Roberto Martins</h3>
+                <p>Administrador</p>
+            </div>
+            <ul>
+                <li class="sidebarItem active-item" id="personalData">Dados pessoais</li>
+                <li class="sidebarItem" id="manageBooks">Gerenciar livros</li>
+            </ul>
+        </aside>
+        <section class="personal-data-container active-section" id="personalData">
+            <h2>Dados pessoais</h2>
+            <div class="personal-data shadow">
+              <div class="data-field">
+                <label>Nome</label>
+                <div>Roberto</div>
+              </div>
+              <div class="data-field">
+                <label>Sobrenome</label>
+                <div>Martins</div>
+              </div>
+              <div class="data-field email-field">
+                <label>Email</label>
+                <div>robertomartins@gmail.com</div>
+              </div>
+              <div class="data-field">
+                <label>CPF</label>
+                <div>555.555.555.55</div>
+              </div>
+              <div class="data-field">
+                <label>Telefone</label>
+                <div>(51) 9 9812-4372</div>
+              </div>
+            </div>
+        </section>
+
+        <section class="manage-books-container" id="manageBooks">
+          <h2>Gerenciar livros</h2>
+
+          <nav class="navbar navbar-expand-lg mb-4">
+            <div class="collapse navbar-collapse custom-nav d-flex justify-content-between" id="navbarSupportedContent">
+              <button class="custom-nav-btn my-2 my-sm-0" type="button" data-bs-toggle="modal" data-bs-target="#addBookModal">Adicionar livro</button>
+              
+            </div>
+
+            <div class="modal fade" id="addBookModal" tabindex="-1" role="dialog" aria-labelledby="addBookModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3 class="modal-title" id="addBookModalLabel">Adicionar Livro</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="form-group">
+                        <label for="formGroupExampleInput">Título</label>
+                        <input type="text" class="form-control" id="bookTitle" placeholder="Título do livro" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="formGroupExampleInput">Autor</label>
+                        <input type="text" class="form-control" id="bookAuthor" placeholder="Autor do livro" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="formGroupExampleInput">Preço (R$):</label>
+                        <input type="number" class="form-control" id="bookPrice" placeholder="Preço do livro" required>
+                      </div>
+                      <div class="form-group col-md-4 custom-select">
+                        <label for="inputState">Gênero</label>
+                        <select class="form-control" id="bookGenre" required>
+                          <option value="ficcao">Ficção</option>
+                          <option value="romance">Romance</option>
+                          <option value="misterio">Mistério</option>
+                          <option value="fantasia">Fantasia</option>
+                          <option value="ficcao-cientifica">Ficção Científica</option>
+                        </select>
+                      </div>
+                      <div class="form-group bookDescription">
+                        <label for="exampleFormControlTextarea1">Descrição:</label>
+                        <textarea class="form-control" id="bookDescription" placeholder="Descrição do livro" rows="3" required></textarea>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-sm-10">
+                          <button onclick="addBook()" type="submit">Adicionar</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+
+          <div class="cards"></div>  
+          
+          <div class="modal fade" id="editBookModal" tabindex="-1" role="dialog" aria-labelledby="editBookModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="editBookModalLabel">Editar Livro</h3>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editForm">
+                            <div class="form-group">
+                                <label for="bookTitle">Título</label>
+                                <input type="text" class="form-control" id="editBookTitle" placeholder="Título do livro" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="author">Autor</label>
+                                <input type="text" class="form-control" id="editBookAuthor" placeholder="Autor do livro" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="price">Preço (R$):</label>
+                                <input type="number" class="form-control" id="editBookPrice" placeholder="Preço do livro" required>
+                            </div>
+                            <div class="form-group col-md-4 custom-select">
+                                <label for="genre">Gênero</label>
+                                <select class="form-control" id="editBookGenre" required>
+                                    <option value="ficcao">Ficção</option>
+                                    <option value="romance">Romance</option>
+                                    <option value="misterio">Mistério</option>
+                                    <option value="fantasia">Fantasia</option>
+                                    <option value="ficcao-cientifica">Ficção Científica</option>
+                                </select>
+                            </div>
+                            <div class="form-group bookDescription">
+                                <label for="bookDescription">Descrição:</label>
+                                <textarea class="form-control" id="editBookDescription" placeholder="Descrição do livro" rows="3" required></textarea>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-10">
+                                    <button id="saveEditBtn" type="button" onclick="editBook()">Editar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/admin.js"></script>
+  </body>
+</html>

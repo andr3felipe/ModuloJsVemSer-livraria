@@ -94,5 +94,97 @@ body {
     display: none !important;
   }
 }
+body {
+  background-color: #fff;
+}
 
-/*# sourceMappingURL=global.css.map */
+main {
+  max-width: 1440px;
+  margin: 5rem auto 2rem;
+  padding: 2rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 5rem;
+  flex-flow: row wrap;
+}
+main .books-to-sky {
+  padding: 1rem;
+  width: 100%;
+}
+main > h1 {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  position: relative;
+  font-weight: 700;
+  line-height: 2.125rem;
+}
+main > h1::after {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  content: "";
+  width: 5rem;
+  border: 2px solid #0060b1;
+}
+main .form-div {
+  flex: 1;
+  flex-basis: 300px;
+  max-width: 400px;
+}
+main form {
+  margin-top: 2rem;
+  width: 100%;
+}
+main form #forgot-password {
+  display: block;
+  text-align: end;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+#login-button {
+  background-color: #0060b1;
+  margin-top: 1.5rem;
+  color: white;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 8px 42px;
+  font-weight: 600;
+}
+#login-button:hover {
+  opacity: 0.8;
+}
+
+.sign-in {
+  font-size: 1rem;
+  text-align: center;
+  margin: 2rem 0;
+  font-weight: 300;
+}
+.sign-in .register-link {
+  color: #fc6b0f;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.error {
+  display: block;
+  height: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
+  .books-to-sky {
+    padding: 0;
+  }
+}
+
+/*# sourceMappingURL=login.css.map */
