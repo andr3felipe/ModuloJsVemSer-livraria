@@ -19,6 +19,27 @@ function currencyFormat(number) {
   }).format(number / 100);
 }
 
+function addToCart(bookId) {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const book = books.find((book) => book.id == bookId);
+
+  if (cart.find((book) => book.id == bookId)) {
+    cart.map((book) => {
+      if (book.id == bookId) {
+        book.quantity += 1;
+      }
+
+      return book;
+    });
+  } else {
+    cart.push({ ...book, quantity: 1 });
+  }
+
+  localStorage.setItem("cart", JSON.stringify([...cart]));
+
+  renderCartCounter();
+}
+
 function renderBook(book) {
   const title =
     book.title.length > 30 ? book.title.substring(0, 30) + "..." : book.title;
@@ -47,7 +68,9 @@ function renderBook(book) {
     </div>
 
     <div class="custom-card-footer">
-      <button class="add-to-cart">Comprar</button>
+      <button class="add-to-cart" onclick="addToCart(${
+        book.id
+      })">Comprar</button>
       <div class="favorite-container">
         <i class="ph ph-heart not-favorite"></i>
         <i class="ph-fill ph-heart favorite"></i>
@@ -56,8 +79,9 @@ function renderBook(book) {
   </div>`;
 }
 
+let books = [];
 async function renderBooks() {
-  const books = await getBooks();
+  books = await getBooks();
   const copyBooks = [...books];
 
   const bestSellers = document.getElementById("best-sellers");
