@@ -1,0 +1,93 @@
+document.addEventListener("DOMContentLoaded", async () => {
+  renderBooks();
+});
+
+async function getBooks() {
+  const response = await fetch("http://localhost:3000/books");
+  const books = await response.json();
+  return books;
+}
+
+function randomGenerator(length) {
+  return Math.floor(Math.random() * length);
+}
+
+function currencyFormat(number) {
+  return new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  }).format(number / 100);
+}
+
+function renderBook(book) {
+  const title =
+    book.title.length > 30 ? book.title.substring(0, 30) + "..." : book.title;
+
+  const discount =
+    book.discountPercent > 0 ? (book.price / 100) * book.discountPercent : 0;
+
+  return `<div class="custom-card">
+    <div class="custom-card-head">
+      <div class="custom-card-image">
+        <img src="./assets/books/${book.id}.webp" alt="" />
+      </div>
+    </div>
+
+    <div class="custom-card-body">
+      <p class="title">${title}</p>
+
+      <div class="custom-card-price">
+        ${
+          discount > 0
+            ? `<p class="price-off">${currencyFormat(book.price)}</p>`
+            : ""
+        }
+        <p class="price">${currencyFormat(book.price - discount)}</p>
+      </div>
+    </div>
+
+    <div class="custom-card-footer">
+      <button class="add-to-cart">Comprar</button>
+      <div class="favorite-container">
+        <i class="ph ph-heart not-favorite"></i>
+        <i class="ph-fill ph-heart favorite"></i>
+      </div>
+    </div>
+  </div>`;
+}
+
+async function renderBooks() {
+  const books = await getBooks();
+  const copyBooks = [...books];
+
+  const bestSellers = document.getElementById("best-sellers");
+  const youMightBeInterested = document.getElementById(
+    "you-might-be-interested"
+  );
+  const recentlySeen = document.getElementById("recently-seen");
+
+  let bestSellersBooks = "";
+
+  for (let i = 0; i < 5; i++) {
+    const book = copyBooks.splice(randomGenerator(copyBooks.length), 1)[0];
+    bestSellersBooks += renderBook(book);
+  }
+
+  let youMightBeInterestedBooks = "";
+
+  for (let i = 0; i < 5; i++) {
+    const book = copyBooks.splice(randomGenerator(copyBooks.length), 1)[0];
+    youMightBeInterestedBooks += renderBook(book);
+  }
+
+  let recentlySeenBooks = "";
+
+  for (let i = 0; i < 5; i++) {
+    const book = copyBooks.splice(randomGenerator(copyBooks.length), 1)[0];
+    recentlySeenBooks += renderBook(book);
+  }
+
+  bestSellers.innerHTML = bestSellersBooks;
+  youMightBeInterested.innerHTML = youMightBeInterestedBooks;
+  recentlySeen.innerHTML = recentlySeenBooks;
+}
