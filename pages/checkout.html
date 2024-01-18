@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="../styles/css/checkout.css">
+</head>
+<body>
+    <header class="header">
+    </header>
+    <main class="main">
+        <h1 class="main-titulo">Checkout</h1>
+        <form class="main-formulario">
+            <!-- Informações do Cliente -->
+            <section class="main-formulario-completar">
+                <div class="main-formulario-completar-descricao">
+                    <h2 class="main-formulario-completar-descricao-titulo">Complete seu pedido!</h2>
+                </div>
+                <div class="main-formulario-completar-perguntas">
+                    <input type="text" id="name" name="name" placeholder="Nome" maxlength="100"
+                        class="main-formulario-completar-perguntas-resposta" aria-label="Nome - obrigatorio" />
+                    <input type="cpf" name="cpf" placeholder="CPF" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}"
+                        class="main-formulario-completar-perguntas-resposta" required aria-label="CPF - obrigatorio" />
+                </div>
+            </section>
+            
+            <!-- Itens Selecionados -->
+            <section class="main-formulario-selecionar">
+                <div class="main-formulario-selecionar-descricao">
+                    <h2 class="main-formulario-selecionar-descricao-titulo">Você selecionou</h2>
+                    <p class="main-formulario-selecionar-descricao-comentario">Confira se está tudo certo no seu pedido</p>
+                </div>
+                <div class="main-formulario-selecionar-escolher">
+                    <img src="#" alt="Imagem livro" class="main-formulario-selecionar-escolher-imagem">
+                    <div class="main-formulario-selecionar-escolher-campos">
+                        <h3 class="main-formulario-selecionar-escolher-campos-livro">Livro 01</h3>
+                        <div class="main-formulario-selecionar-escolher-campos-modificadores">
+                            <button class="main-formulario-selecionar-escolher-campos-modificadores-botao" type="button">
+                                <i class="ph ph-minus"></i>
+                            </button>
+                            <label class="main-formulario-selecionar-escolher-campos-modificadores-label">1</label>
+                            <button class="main-formulario-selecionar-escolher-campos-modificadores-botao" type="button">
+                                <i class="ph ph-plus"></i>
+                            </button>
+                            <button class="main-formulario-selecionar-escolher-campos-modificadores-botao-excluir" type="button" aria-label="Excluir item">
+                                <i class="ph ph-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <p class="main-formulario-selecionar-escolher-preco">R$ 49,90</p>
+                </div>
+                
+                <!-- Repetir bloco para cada item selecionado -->
+                <!-- ... -->
+
+                <!-- Total -->
+                <div class="main-formulario-selecionar-totais">
+                    <div class="main-formulario-selecionar-totais-itens">
+                        <p>Total de itens</p> 
+                        <p>R$ 17,98</p>
+                    </div>
+                    <div class="main-formulario-selecionar-totais-servicos">
+                        <p>Taxa de serviço</p> 
+                        <p>R$ 3,00</p>
+                    </div>
+                    <div class="main-formulario-selecionar-totais-total">
+                        <p>Total</p> 
+                        <p>R$ 20,98</p>
+                    </div>
+                </div>
+                
+                <!-- Informações de Pagamento -->
+                <section class="main-formulario-pagamento">
+                    <div class="main-formulario-pagamento-descricao">
+                        <h2 class="main-formulario-pagamento-descricao-titulo">Informações de Pagamento</h2>
+                    </div>
+                    <div class="main-formulario-pagamento-campos">
+                        <input type="text" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="Número do cartão" class="main-formulario-pagamento-campos-resposta" required />
+                        <input type="text" inputmode="numeric" pattern="\d*" autocomplete="cc-exp" maxlength="5" placeholder="MM/AA" class="main-formulario-pagamento-campos-resposta" required />
+                        <input type="text" inputmode="numeric" pattern="\d*" autocomplete="cc-csc" maxlength="3" placeholder="CVC" class="main-formulario-pagamento-campos-resposta" required />
+                    </div>
+                </section>
+
+                <!-- Botão de Confirmação -->
+                <button type="submit" class="main-formulario-selecionar-submit">Confirmar pedido!</button>
+            </section>
+        </form>
+    </main>
+    <footer class="footer">
+    </footer>
+</body>
+</html>
