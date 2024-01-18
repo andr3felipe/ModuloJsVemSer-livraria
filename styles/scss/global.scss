@@ -18,3 +18,82 @@ $radii-md: 0.5rem;
 body {
   background-color: $background;
 }
+
+.header {
+  background-color: $primary;
+}
+
+.navbar {
+  color: $text-white;
+  padding: 0.5rem 1rem;
+  max-width: 90rem;
+
+  .navbar-logotipo {
+    font-size: 2rem;
+    color: white;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: black;
+    }
+  }
+
+  .custom-navbar-toggler {
+    border-color: white;
+  }
+
+  .custom-navbar-icon {
+    transition: all 0.3s ease-in-out;
+    color: white;
+    font-weight: 500;
+
+    &:hover {
+      color: black;
+    }
+  }
+
+  .custom-form-container {
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+
+    ::-webkit-input-placeholder {
+      text-align: center;
+    }
+
+    .custom-search-bar {
+      text-overflow: ellipsis;
+    }
+  }
+
+  .custom-magnifying-glass {
+    border: none;
+    position: absolute;
+    right: 1rem;
+    background-color: transparent;
+    display: inline-block;
+    font-size: 1.5rem;
+  }
+
+  .custom-nav-item-mobile {
+    &:hover {
+      background-color: $primary;
+
+      > a {
+        color: white;
+      }
+    }
+  }
+}
+
+@media (min-width: 750px) {
+  .custom-navbar-toggler {
+    display: none;
+  }
+}
+
+@media (max-width: 750px) {
+  .desktop-navbar {
+    display: none !important;
+  }
+}
