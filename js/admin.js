@@ -43,13 +43,23 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function addBook() {
-    const book = {
-        image: 'https://m.media-amazon.com/images/I/71FZSPKM0lL._AC_UF1000,1000_QL80_.jpg',
-        title: titleInput.value,
-        author: authorInput.value,
-        genre: genreInput.value,
-        price: priceInput.value,
-        description: descriptionInput.value
+    const title = titleInput.value.trim();
+    const author = authorInput.value.trim();
+    const genre = genreInput.value.trim();
+    const price = parseFloat(priceInput.value.trim());
+    const description = descriptionInput.value.trim();
+
+    if (!title || !author || !genre || isNaN(price) || price <= 0 || !description) {
+        alert("Por favor, preencha todos os campos corretamente.");
+        return;
+    }
+
+    const newBook = {
+        title: title,
+        author: author,
+        genre: genre,
+        price: price,
+        description: description,
     };
 
     fetch('http://localhost:3000/books', {
@@ -57,21 +67,19 @@ function addBook() {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(book),
+        body: JSON.stringify(newBook),
     })
-        .then(response => response.json())
-        .then(data => {
-            books.push(data);
-            renderBooks();
-            modal.hide();
-        })
-        .catch(error => console.error('Erro ao adicionar livro:', error));
-    
-    titleInput.value = '';
-    authorInput.value = '';
-    genreInput.value = '';
-    priceInput.value = '';
-    descriptionInput.value = '';
+    .then(response => response.json())
+    .then(data => {
+        books.push(data);
+        renderBooks();
+    })
+    .catch(err => console.error('Erro ao adicionar livro: ', err));
+}
+
+// Função para formatar o preço como moeda
+function currencyFormat(value) {
+    return 'R$ ' + value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
 }
 
 function currencyFormat(number) {
@@ -85,89 +93,124 @@ function renderBooks() {
     document.querySelector('.cards').innerHTML = '';
 
     books.forEach(book => {
-        const title =
-            book.title.length > 30 ? book.title.substring(0, 30) + "..." : book.title;
-
-        const discount =
-            book.discountPercent > 0 ? (book.price / 100) * book.discountPercent : 0;
-
-        document.querySelector('.cards').innerHTML += `
-        <div class="custom-card">
-        <div class="custom-card-head">
-          <div class="custom-card-image">
-            <img src="../assets/books/${book.id}.webp" alt="" />
-          </div>
-        </div>
-    
-        <div class="custom-card-body">
-          <p class="title">${title}</p>
-    
-          <div class="custom-card-price">
-            ${
-              discount > 0
-                ? `<p class="price-off">${currencyFormat(book.price)}</p>`
-                : ""
-            }
-            <p class="price">${currencyFormat(book.price - discount)}</p>
-          </div>
-        </div>
-    
-        <div class="custom-card-footer">
-            <div class="manage-buttons">
-                <button type="button" class="edit-btn" data-bs-toggle="modal" data-bs-target="#editBookModal">
-                    <img class="manage-img" src="../assets/pencil.png" alt="icone de editar">
-                </button>
-                <button>
-                    <img class="manage-img" id="removeBtn" src="../assets/trash.png" alt="icone de remover"></button>
-                </button>
-            </div>
-        </div>
-      </div>
-        `;
+        document.querySelector('.cards').innerHTML += renderBook(book);
     })
 
-modal.hide();
+    modal.hide();
 }
 
+function renderBook(book) {
+    const title =
+      book.title.length > 30 ? book.title.substring(0, 30) + "..." : book.title;
+  
+    const discount =
+      book.discountPercent > 0 ? (book.price / 100) * book.discountPercent : 0;
+  
+    return `<div class="custom-card" data-id="${book.id}">
+                <div class="custom-card-head">
+                <div class="custom-card-image">
+                    <img src="../assets/books/${book.id}.webp" alt="" />
+                </div>
+                </div>
 
-function editBook() {
-    const bookToUpdate = books.find(book => book.title === document.getElementById('editBookTitle').value);
+                <div class="custom-card-body">
+                <p class="title">${title}</p>
 
-    console.log(bookToUpdate)
+                <div class="custom-card-price">
+                    ${
+                    discount > 0
+                        ? `<p class="price-off">${currencyFormat(book.price)}</p>`
+                        : ""
+                    }
+                    <p class="price">${currencyFormat(book.price - discount)}</p>
+                </div>
+                </div>
 
-    if (!bookToUpdate) {
-        console.error('Livro não encontrado.');
+                <div class="custom-card-footer">
+                    <div class="manage-buttons">
+                        <button type="button" onclick="fillEditForm('${book.id}')" class="edit-btn" data-bs-toggle="modal" data-bs-target="#editBookModal">
+                            <img class="manage-img" id="editPencilBtn" src="../assets/pencil.png" alt="icone de editar">
+                        </button>
+                        <button onclick="deleteBook('${book.id}')">
+                            <img class="manage-img" id="removeBtn" src="../assets/trash.png" alt="icone de remover"></button>
+                        </button>
+                    </div>
+                </div>
+             </div>`;
+  }
+
+const editBookTitleInput = document.getElementById('editBookTitle');
+const editBookAuthorInput = document.getElementById('editBookAuthor');
+const editBookGenreInput = document.getElementById('editBookGenre');
+const editBookPriceInput = document.getElementById('editBookPrice');
+const editBookDescriptionInput = document.getElementById('editBookDescription');
+const editBookForm = document.getElementById('editBookForm');
+const editModal = new bootstrap.Modal(document.getElementById('editBookModal'));
+
+function fillEditForm(id) {
+    const bookToEdit = books.find(book => book.id === `${id}`);
+
+    editBookTitleInput.value = bookToEdit.title;
+    editBookAuthorInput.value = bookToEdit.author;
+    editBookGenreInput.option = bookToEdit.genre;
+    editBookPriceInput.value = bookToEdit.price;
+    editBookDescriptionInput.textContent = bookToEdit.description;
+
+    document.getElementById('saveEditBtn').addEventListener('click', () => editBook(id));
+}
+
+function editBook(id) {  
+    const editedTitle = editBookTitleInput.value;
+    const editedAuthor = editBookAuthorInput.value;
+    const editedGenre = editBookGenreInput.value;
+    const editedPrice = parseFloat(editBookPriceInput.value);
+    const editedDescription = editBookDescriptionInput.value;
+
+    if (!editedTitle || !editedAuthor || !editedGenre || isNaN(editedPrice) || editedPrice <= 0 || !editedDescription) {
+        alert("Por favor, preencha todos os campos corretamente.");
         return;
     }
 
-    bookToUpdate.title = document.getElementById('editBookTitle').value;
-    bookToUpdate.author = document.getElementById('editBookAuthor').value;
-    bookToUpdate.genre = document.getElementById('editBookGenre').value;
-    bookToUpdate.price = document.getElementById('editBookPrice').value;
-    bookToUpdate.description = document.getElementById('editBookDescription').value;
+    const editedBook = {
+        title: editedTitle,
+        author: editedAuthor,
+        genre: editedGenre,
+        price: editedPrice,
+        description: editedDescription,
+    };
 
-    fetch(`http://localhost:3000/books/${bookToUpdate.id}`, {
+    fetch(`http://localhost:3000/books/${id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(bookToUpdate),
+        body: JSON.stringify(editedBook),
     })
-        .then(response => response.json())
-        .then(data => {
-            const index = books.findIndex(book => book.id === data.id);
-            
+    .then(response => response.json())
+    .then(data => {
+        // Atualiza o livro no array e re-renderiza a lista de livros
+        const index = books.findIndex(book => book.id == id);
+        if (index !== -1) {
             books[index] = data;
-
             renderBooks();
-            const editModal = new bootstrap.Modal(document.getElementById('editBookModal'));
-            editModal.hide();
-        })
-        .catch(error => console.error('Erro ao editar livro:', error));
+        }
+    })
+    .catch(err => console.error('Erro ao editar livro: ', err));
+
+    editModal.hide();
 }
 
-
-
+function deleteBook(id) {
+    console.log(books)
+    fetch(`http://localhost:3000/books/${id}`, {
+        method: 'DELETE',
+    })
+    .then(() => {
+        books = books.filter(book => book.id != id);
+        renderBooks();
+    })
+    .catch(err => console.error('Erro ao excluir livro: ', err));
+}
 
 
 

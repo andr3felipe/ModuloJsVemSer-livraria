@@ -120,6 +120,7 @@ main .manage-books-container .cards .custom-card {
   flex-flow: column;
   border: 1px solid #e5e9f2;
   max-width: 230px;
+  min-width: 230px;
   border-radius: 0.25rem;
   background-color: white;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);

@@ -135,6 +135,7 @@ main {
                 flex-flow: column;
                 border: 1px solid $secondary;
                 max-width: 230px;
+                min-width: 230px;
                 border-radius: $radii-sm;
                 background-color: white;
                 box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
