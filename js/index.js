@@ -44,10 +44,25 @@ async function addToCart(bookId) {
   await updateUser();
 }
 
-let books = [];
-async function renderBooks() {
-  books = await getBooks();
-  const copyBooks = [...books];
+function handleChangeCategory(categoryClicked) {
+  contentSection.classList.remove('hidden')
+  searchResult.classList.add('hidden')
+  categorySelected.classList.remove('hidden')
+  renderBooks(({ category }) => category === categoryClicked)
+}
+
+function handleChangeSearch() {
+  const { value } = search 
+  contentSection.classList[!value ? 'add' : 'remove']('hidden')
+  searchResult.classList.remove('hidden')
+  categorySelected.classList.add('hidden')
+  renderBooks(({ title }) => title?.toLowerCase().includes(value?.toLowerCase()))
+}
+
+async function renderBooks(filter) {
+  const books = await getBooks();
+  const searchedBooks = filter ? books.filter(filter) : books
+  const copyBooks = books;
 
   const user = JSON.parse(localStorage.getItem("user")) || null;
 
@@ -56,6 +71,8 @@ async function renderBooks() {
     "you-might-be-interested"
   );
   const recentlySeen = document.getElementById("recently-seen");
+
+  contentContainer.innerHTML = searchedBooks.length > 0 ? searchedBooks.reduce((pV, cV) => pV + renderBook(cV), "") : 'Não foram encontrados livros'
 
   let bestSellersBooks = "";
 
@@ -125,7 +142,9 @@ function updateUserData(bookId, action) {
   renderBooks();
 }
 
-function renderBook(book, favorite) {
+function renderBook(book, favorite = false) {
+  if (book?.title === undefined) return ''
+
   const title =
     book.title.length > 30 ? book.title.substring(0, 30) + "..." : book.title;
 

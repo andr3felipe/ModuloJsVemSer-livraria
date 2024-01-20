@@ -260,4 +260,8 @@ h1 {
   min-width: 2rem;
 }
 
+.hidden {
+  display: none;
+}
+
 /*# sourceMappingURL=index.css.map */
