@@ -47,28 +47,59 @@
           ]
         }
       ],
-      "favorites": []
+      "favorites": [
+        {
+          "title": "Teoria de Unificação",
+          "author": "Luiz Carlos de Almeida",
+          "genre": "Informática",
+          "price": 1000,
+          "description": "O aprendiz Trizno é procurado pelo assassinato de seus mestres: três dentre os mais poderosos magos existentes no mundo. Como se não bastasse, roubou armas lendárias e reuniu um grupo para se opor ao reino e impedi-lo de recuperar suas relíquias. O rei, frustrado por anos falhando em capturar esses criminosos, ordena uma investida impiedosa para subjugar o assassino e ladrão. Contudo, mesmo encurralado por centenas de soldados e magos, ninguém imaginava que Trizno poderia escapar usando uma magia quase esquecida e a mais antiga do seu mundo, a Diáspora.",
+          "id": "2"
+        },
+        {
+          "id": "3",
+          "title": "Estruturas de dados",
+          "description": "Na ciência da computação são estudados vários tipo de estruturas de dados, sua aplicação e manipulação. A escolha da estrutura de dados adequada para representar uma realidade deve considerar aspectos como alocação da memória, formas de consulta, acesso e operações de inserção e exclusão. O objetivo desta obra é apresentar as principais estruturas de dados conhecidas de uma forma prática e fácil de compreender. São apresentadas as diversas aplicações dessas estruturas por meio de exemplos de programas em C e em Pascal. A obra traz exercícios adicionais que podem ser acessados pelos professores cadastrados no site da Cengage.",
+          "price": 1000,
+          "discountPercent": 10,
+          "category": "Informática",
+          "publishedYear": 2006,
+          "author": "Lorenzi, Fabiana; De Mattos, Patrícia; De Carvalho, Tanisi",
+          "publisher": "Cengage Learning Edições Ltda.",
+          "pages": 200,
+          "cover": "Livro brochura (paperback)",
+          "language": "Português"
+        }
+      ]
+    },
+    {
+      "id": "b78c",
+      "name": "André Felipe de Sousa",
+      "email": "andre.felipe_680@hotmail.com",
+      "password": "123123",
+      "address": "Rua 21, 3650"
+    },
+    {
+      "id": "9903",
+      "name": "André Felipe de Sousa",
+      "email": "teste@teste.com",
+      "password": "123123",
+      "address": "Rua 21, 3650"
     }
   ],
   "books": [
     {
-      "id": "1",
       "title": "Sistemas de comunicação",
-      "description": "Este livro abrange assuntos que envolvem os diversos tipos de sistemas de comunicação, sua evolução durante os anos, bem como os parâmetros necessários para o entendimento da matéria. Apresenta os serviços outorgados pela Agência Nacional de Telecomunicações (Anatel). Explica as unidades de medida, sua conversão e os níveis de potência. Discorre sobre ruído, meios de transmissão e tipos de modulação. Conceitua a transformação dos sinais analógicos em sinais digitais. Orienta sobre técnicas de modulação por pulsos e em modems, e sobre os parâmetros utilizados em antena, empregados em várias bandas de frequências. Explana sobre cálculo de viabilidade de um enlace via rádio e seus procedimentos teóricos. Analisa os princípios da fibra óptica e as modulações adotadas para aumentar a capacidade de transmissão de sinais. Traz informações sobre telefonia celular, radiodifusão digital e comunicação via satélite. O conteúdo pode ser aplicado para os cursos técnicos em Redes de Computadores, Sistemas de Comutação, Sistemas de Transmissão, Telecomunicações, entre outros. Possui material de apoio ao professor.",
-      "price": 1000,
-      "discountPercent": 10,
-      "category": "Informática",
-      "publishedYear": 2015,
       "author": "Soares Neto, Vicente",
-      "publisher": "Saraiva Educação S. A.",
-      "pages": 176,
-      "cover": "Livro brochura (paperback)",
-      "language": "Português"
+      "genre": "Informática",
+      "price": 1000,
+      "description": "Este livro abrange assuntos que envolvem os diversos tipos de sistemas de comunicação, sua evolução durante os anos, bem como os parâmetros necessários para o entendimento da matéria. Apresenta os serviços outorgados pela Agência Nacional de Telecomunicações (Anatel). Explica as unidades de medida, sua conversão e os níveis de potência. Discorre sobre ruído, meios de transmissão e tipos de modulação. Conceitua a transformação dos sinais analógicos em sinais digitais. Orienta sobre técnicas de modulação por pulsos e em modems, e sobre os parâmetros utilizados em antena, empregados em várias bandas de frequências. Explana sobre cálculo de viabilidade de um enlace via rádio e seus procedimentos teóricos. Analisa os princípios da fibra óptica e as modulações adotadas para aumentar a capacidade de transmissão de sinais. Traz informações sobre telefonia celular, radiodifusão digital e comunicação via satélite. O conteúdo pode ser aplicado para os cursos técnicos em Redes de Computadores, Sistemas de Comutação, Sistemas de Transmissão, Telecomunicações, entre outros. Possui material de apoio ao professor.",
+      "id": "1"
     },
     {
       "title": "Teoria de Unificação",
       "author": "Luiz Carlos de Almeida",
-      "genre": "ficcao",
+      "genre": "Informática",
       "price": 1000,
       "description": "O aprendiz Trizno é procurado pelo assassinato de seus mestres: três dentre os mais poderosos magos existentes no mundo. Como se não bastasse, roubou armas lendárias e reuniu um grupo para se opor ao reino e impedi-lo de recuperar suas relíquias. O rei, frustrado por anos falhando em capturar esses criminosos, ordena uma investida impiedosa para subjugar o assassino e ladrão. Contudo, mesmo encurralado por centenas de soldados e magos, ninguém imaginava que Trizno poderia escapar usando uma magia quase esquecida e a mais antiga do seu mundo, a Diáspora.",
       "id": "2"
@@ -104,7 +135,7 @@
     {
       "title": "Teoria de Unificação",
       "author": "Luiz Carlos de Almeida",
-      "genre": "ficcao",
+      "genre": "Informática",
       "price": 1000,
       "description": "O aprendiz Trizno é procurado pelo assassinato de seus mestres: três dentre os mais poderosos magos existentes no mundo. Como se não bastasse, roubou armas lendárias e reuniu um grupo para se opor ao reino e impedi-lo de recuperar suas relíquias. O rei, frustrado por anos falhando em capturar esses criminosos, ordena uma investida impiedosa para subjugar o assassino e ladrão. Contudo, mesmo encurralado por centenas de soldados e magos, ninguém imaginava que Trizno poderia escapar usando uma magia quase esquecida e a mais antiga do seu mundo, a Diáspora.",
       "id": "5"
@@ -308,10 +339,18 @@
     {
       "title": "Teoria de Unificação",
       "author": "Luiz Carlos de Almeida",
-      "genre": "ficcao",
+      "genre": "Ficção Científica e Fantasia",
       "price": 1000,
       "description": "O aprendiz Trizno é procurado pelo assassinato de seus mestres: três dentre os mais poderosos magos existentes no mundo. Como se não bastasse, roubou armas lendárias e reuniu um grupo para se opor ao reino e impedi-lo de recuperar suas relíquias. O rei, frustrado por anos falhando em capturar esses criminosos, ordena uma investida impiedosa para subjugar o assassino e ladrão. Contudo, mesmo encurralado por centenas de soldados e magos, ninguém imaginava que Trizno poderia escapar usando uma magia quase esquecida e a mais antiga do seu mundo, a Diáspora.",
       "id": "20"
+    },
+    {
+      "id": "755e",
+      "title": "Teste",
+      "author": "Autor teste",
+      "genre": "romance",
+      "price": 5,
+      "description": "Teste"
     }
   ]
 }
