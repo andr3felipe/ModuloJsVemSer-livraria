@@ -45,7 +45,6 @@ async function updateUserData(bookId, action) {
 
   localStorage.setItem("user", JSON.stringify(user));
   renderFavorities();
-  await updateUser();
 }
 
 function renderBook(book) {

@@ -51,13 +51,13 @@
                   <i class="ph ph-list fs-4"></i> Categorias
                 </button>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Informática</a></li>
-                  <li>
+                  <li onclick="handleChangeCategory('Informática')"><a class="dropdown-item" href="#">Informática</a></li>
+                  <li onclick="handleChangeCategory('Ficção Científica e Fantasia')">
                     <a class="dropdown-item" href="#"
                       >Ficção Científica e Fantasia</a
                     >
                   </li>
-                  <li><a class="dropdown-item" href="#">Terror</a></li>
+                  <li onclick="handleChangeCategory('Terror')"><a class="dropdown-item" href="#">Terror</a></li>
                 </ul>
               </div>
             </div>
@@ -152,9 +152,11 @@
           class="mx-auto pt-2 pb-2 d-flex align-items-center justify-content-center custom-form-container"
         >
           <input
+            id="search"
             type="text"
             class="form-control custom-search-bar pe-5 text-el"
             placeholder="O que você está buscando ?"
+            onkeyup="handleChangeSearch()"
           />
           <button
             type="submit"
@@ -252,6 +254,13 @@
     </div>
 
     <main>
+      <section id="contentSection" class="section hidden">
+        <h2 id="categorySelected" class="hidden">Categoria selecionada</h2>
+        <h2 id="searchResult" class="hidden">Resultado da busca</h2>
+    
+        <div class="custom-cards-container" id="contentContainer"></div>
+      </section>
+      
       <h1>Destaques</h1>
 
       <section class="section">
