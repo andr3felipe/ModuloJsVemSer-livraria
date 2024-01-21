@@ -2,12 +2,18 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Login" />
-    <meta name="keywords" content="fazer login" />
+    <title>BibliotecaVirtual | Cadastro</title>
+    <link rel="stylesheet" href="../styles/css/create-account.css" />
+    <meta name="description" content="Crie sua conta" />
+    <meta name="keywords" content="cadastro, registro, criar conta" />
     <meta name="author" content="Grupo 1" />
-    <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
-    <title>Panato | Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/css/footer.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -23,7 +29,6 @@
     />
     <link rel="stylesheet" href="../styles/css/global.css" />
     <link rel="stylesheet" href="../styles/css/login.css" />
-    <link rel="stylesheet" href="../styles/css/footer.css" />
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <script src="../js/global.js"></script>
     <script src="../js/login.js"></script>
@@ -61,6 +66,7 @@
               </div>
             </div>
             <div
+              id="desktop-navbar"
               class="d-flex align-items-center justify-content-center gap-2 desktop-navbar"
             >
               <a
@@ -149,59 +155,42 @@
         </form>
       </nav>
     </header>
-
-    <main>
-      <div>
-        <img
-          class="books-to-sky"
-          src="../assets/login-img.avif"
-          alt="Livros formando umas escada para o céu"
-        />
+    <div class="container">
+      <h1 class="heading"><strong>Crie uma conta</strong></h1>
+      <form class="form">
+        <label>
+          Nome
+          <div><input class="input" /></div>
+        </label>
+        <label>
+          E-mail
+          <div><input class="input" type="email" /></div>
+        </label>
+        <label class="relative">
+          Senha
+          <div><input class="input" type="password" /></div>
+        </label>
+        <label>
+          Endereço
+          <div><input class="input" /></div>
+        </label>
+        <button type="button" class="button bg-green">
+          <strong>Criar uma conta</strong>
+        </button>
+      </form>
+      <div class="divider">
+        <div>
+          <hr class="line" />
+        </div>
+        <span class="text">ou</span>
+        <div>
+          <hr class="line" />
+        </div>
       </div>
-      <div class="form-div">
-        <h1>Fazer login</h1>
-        <form class="border-bottom pb-4" onsubmit="login(event)">
-          <label class="form-label" for="email">E-mail</label>
-          <input
-            type="email"
-            class="form-control"
-            id="email"
-            name="email"
-            required
-          />
-          <label class="form-label mt-3" for="password">Senha</label>
-          <input
-            autocomplete="on"
-            type="password"
-            class="form-control"
-            id="password"
-            name="password"
-            required
-            minlength="6"
-          />
-          <span id="passwordHelpInline" class="form-text">
-            Tem que ter 6-20 caracateres.
-          </span>
-          <button type="submit" class="btn w-100" id="login-button">
-            <i class="ph ph-sign-in fs-4"></i>
-            Entrar
-          </button>
-          <a
-            href="#"
-            id="forgot-password"
-            aria-label="Recuperar senha"
-            class="form-text"
-          >
-            Esqueceu a senha ?
-          </a>
-        </form>
-
-        <h2 class="sign-in">
-          Novo por aqui?
-          <a class="register-link" href="./register.html">Cadastre-se!</a>
-        </h2>
-      </div>
-    </main>
+      <button type="button" class="button bg-gray">
+        <strong>Fazer login</strong>
+      </button>
+    </div>
 
     <footer>
       <div>
@@ -254,10 +243,5 @@
         ></a>
       </div>
     </footer>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>
