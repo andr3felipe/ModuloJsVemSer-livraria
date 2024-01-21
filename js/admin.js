@@ -1,5 +1,6 @@
 let books = [];
 
+const imageInput = document.getElementById('bookImage');
 const titleInput = document.getElementById('bookTitle');
 const authorInput = document.getElementById('bookAuthor');
 const genreInput = document.getElementById('bookGenre');
@@ -43,18 +44,20 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function addBook() {
+    const image = imageInput.value.trim();
     const title = titleInput.value.trim();
     const author = authorInput.value.trim();
     const genre = genreInput.value.trim();
     const price = parseFloat(priceInput.value.trim());
     const description = descriptionInput.value.trim();
 
-    if (!title || !author || !genre || isNaN(price) || price <= 0 || !description) {
+    if (!image || !title || !author || !genre || isNaN(price) || price <= 0 || !description) {
         alert("Por favor, preencha todos os campos corretamente.");
         return;
     }
 
     const newBook = {
+        image: image,
         title: title,
         author: author,
         genre: genre,
@@ -109,7 +112,7 @@ function renderBook(book) {
     return `<div class="custom-card" data-id="${book.id}">
                 <div class="custom-card-head">
                 <div class="custom-card-image">
-                    <img src="../assets/books/${book.id}.webp" alt="" />
+                    <img src="${book.image}" alt="" />
                 </div>
                 </div>
 
@@ -139,6 +142,7 @@ function renderBook(book) {
              </div>`;
   }
 
+const editBookImageInput = document.getElementById('editBookImage');
 const editBookTitleInput = document.getElementById('editBookTitle');
 const editBookAuthorInput = document.getElementById('editBookAuthor');
 const editBookGenreInput = document.getElementById('editBookGenre');
@@ -150,6 +154,7 @@ const editModal = new bootstrap.Modal(document.getElementById('editBookModal'));
 function fillEditForm(id) {
     const bookToEdit = books.find(book => book.id === `${id}`);
 
+    editBookImageInput.value = bookToEdit.image;
     editBookTitleInput.value = bookToEdit.title;
     editBookAuthorInput.value = bookToEdit.author;
     editBookGenreInput.option = bookToEdit.genre;
@@ -160,18 +165,20 @@ function fillEditForm(id) {
 }
 
 function editBook(id) {  
+    const editedImage = editBookImageInput.value;
     const editedTitle = editBookTitleInput.value;
     const editedAuthor = editBookAuthorInput.value;
     const editedGenre = editBookGenreInput.value;
     const editedPrice = parseFloat(editBookPriceInput.value);
     const editedDescription = editBookDescriptionInput.value;
 
-    if (!editedTitle || !editedAuthor || !editedGenre || isNaN(editedPrice) || editedPrice <= 0 || !editedDescription) {
+    if (!editedImage || !editedTitle || !editedAuthor || !editedGenre || isNaN(editedPrice) || editedPrice <= 0 || !editedDescription) {
         alert("Por favor, preencha todos os campos corretamente.");
         return;
     }
 
     const editedBook = {
+        image: editedImage,
         title: editedTitle,
         author: editedAuthor,
         genre: editedGenre,

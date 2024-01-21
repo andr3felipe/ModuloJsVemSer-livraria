@@ -112,7 +112,8 @@ body {
 }
 
 main {
-  margin-top: 5rem;
+  max-width: 1400px !important;
+  margin-top: 80px;
   display: flex;
   gap: 120px;
 }
@@ -368,7 +369,7 @@ main .add-book-container {
 main .add-book-container form {
   display: grid;
   grid-template-columns: auto auto;
-  grid-template-rows: auto auto auto auto;
+  grid-template-rows: repeat(5, auto);
   gap: 20px;
 }
 main .add-book-container form label {
@@ -379,7 +380,10 @@ main .add-book-container form input {
   width: 100%;
   padding: 5px 10px;
 }
-main .add-book-container form .bookDescription {
+main .add-book-container form .book-image {
+  grid-column: span 2;
+}
+main .add-book-container form .book-description {
   grid-column: span 2;
 }
 main .add-book-container form .custom-select {
@@ -410,7 +414,10 @@ main form input {
   width: 100%;
   padding: 5px 10px;
 }
-main form .bookDescription {
+main form .book-image {
+  grid-column: span 2;
+}
+main form .book-description {
   grid-column: span 2;
 }
 main form .custom-select {

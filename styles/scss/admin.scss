@@ -17,10 +17,11 @@
       font-size: 2rem;
       color: $orange-weak;
     }
-  }
+}
 
 main {
-    margin-top: 5rem;
+    max-width: 1400px !important;
+    margin-top: 80px;
     display: flex;
     gap: 120px;
 
@@ -315,7 +316,7 @@ main {
         form {
             display: grid;
             grid-template-columns: auto auto;
-            grid-template-rows: auto auto auto auto;
+            grid-template-rows: repeat(5, auto);
             gap: 20px;
             
             label {
@@ -328,7 +329,11 @@ main {
                 padding: 5px 10px;
             }
 
-            .bookDescription {
+            .book-image {
+                grid-column: span 2;
+            }
+
+            .book-description {
                 grid-column: span 2;
             }
 
@@ -367,7 +372,11 @@ main {
             padding: 5px 10px;
         }
 
-        .bookDescription {
+        .book-image {
+            grid-column: span 2;
+        }
+
+        .book-description {
             grid-column: span 2;
         }
 
