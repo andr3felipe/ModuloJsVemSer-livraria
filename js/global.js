@@ -60,6 +60,7 @@ function fixButtons() {
 
   document.getElementById("desktop-navbar").innerHTML += `
   <a
+  href="../pages/login.html"
   onclick="logout()"  
   class="btn d-flex align-items-center justify-content-center gap-1 custom-navbar-icon"
 >

@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.body.style.display = "none";
 
   if (verifyLogin()) {
-    window.location.href = "./pages/profile.html";
+    window.location.href = "./admin.html";
   } else {
     document.body.style.display = "block";
   }
