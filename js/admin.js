@@ -10,14 +10,16 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 let books = [];
+let users = [];
 
-const titleInput = document.getElementById("bookTitle");
-const authorInput = document.getElementById("bookAuthor");
-const genreInput = document.getElementById("bookGenre");
-const priceInput = document.getElementById("bookPrice");
-const descriptionInput = document.getElementById("bookDescription");
-const modal = new bootstrap.Modal(document.getElementById("addBookModal"));
-const form = document.querySelector("form");
+const imageInput = document.getElementById('bookImage');
+const titleInput = document.getElementById('bookTitle');
+const authorInput = document.getElementById('bookAuthor');
+const genreInput = document.getElementById('bookGenre');
+const priceInput = document.getElementById('bookPrice');
+const descriptionInput = document.getElementById('bookDescription');
+const modal = new bootstrap.Modal(document.getElementById('addBookModal'));
+const form = document.querySelector('form');
 
 document.addEventListener("DOMContentLoaded", () => {
   const sidebarItems = document.querySelectorAll(".sidebarItem");
@@ -50,37 +52,63 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Erro ao obter os dados do servidor: ", err)
       );
 
+    fetch('http://localhost:3000/users')
+      .then(response => response.json()) 
+      .then(data => {
+        users = data;
+        renderUsers();
+      })
+      .catch((err) =>
+        console.error("Erro ao obter os dados do servidor: ", err)
+      );
+
     const saveEditBtn = document.getElementById("saveEditBtn");
     saveEditBtn.addEventListener("click", editBook);
   });
 });
 
+function renderUsers() {
+  document.querySelector('.users').innerHTML = "";
+  
+  users.forEach(user => {
+    document.querySelector('.users').innerHTML += renderUser(user);
+  });
+}
+
+function renderUser(user) {
+  return `<div class="user">
+      <div>
+        <img src="../assets/user.png" alt="imagem de perfil de usuário sem foto">
+        <p>${user.name}</p>
+      </div>
+      <button class="manage-button" onclick="deleteUser('${user.id}')">
+        <img class="manage-img" id="removeBtn" src="../assets/trash.png" alt="icone de remover"></button>
+      </button>
+    </div>
+  `;
+}
+
 function addBook() {
-  const title = titleInput.value.trim();
-  const author = authorInput.value.trim();
-  const genre = genreInput.value.trim();
-  const price = parseFloat(priceInput.value.trim());
-  const description = descriptionInput.value.trim();
+    const image = imageInput.value.trim();
+    const title = titleInput.value.trim();
+    const author = authorInput.value.trim();
+    const genre = genreInput.value.trim();
+    const price = parseFloat(priceInput.value.trim());
+    const description = descriptionInput.value.trim();
 
-  if (
-    !title ||
-    !author ||
-    !genre ||
-    isNaN(price) ||
-    price <= 0 ||
-    !description
-  ) {
-    alert("Por favor, preencha todos os campos corretamente.");
-    return;
-  }
+    if (!image || !title || !author || !genre || isNaN(price) || price <= 0 || !description) {
+        alert("Por favor, preencha todos os campos corretamente.");
+        return;
+    }
 
-  const newBook = {
-    title: title,
-    author: author,
-    genre: genre,
-    price: price,
-    description: description,
-  };
+    const newBook = {
+        image: image,
+        title: title,
+        author: author,
+        genre: genre,
+        price: price,
+        description: description,
+    };
 
   fetch("http://localhost:3000/books", {
     method: "POST",
@@ -129,7 +157,7 @@ function renderBook(book) {
   return `<div class="custom-card" data-id="${book.id}">
                 <div class="custom-card-head">
                 <div class="custom-card-image">
-                    <img src="../assets/books/${book.id}.webp" alt="" />
+                    <img src="${book.image}" alt="" />
                 </div>
                 </div>
 
@@ -154,10 +182,10 @@ function renderBook(book) {
                     <div class="manage-buttons">
                         <button type="button" onclick="fillEditForm('${
                           book.id
-                        }')" class="edit-btn" data-bs-toggle="modal" data-bs-target="#editBookModal">
+                        }')" class="manage-button edit-btn" data-bs-toggle="modal" data-bs-target="#editBookModal">
                             <img class="manage-img" id="editPencilBtn" src="../assets/pencil.png" alt="icone de editar">
                         </button>
-                        <button onclick="deleteBook('${book.id}')">
+                        <button class="manage-button" onclick="deleteBook('${book.id}')">
                             <img class="manage-img" id="removeBtn" src="../assets/trash.png" alt="icone de remover"></button>
                         </button>
                     </div>
@@ -165,22 +193,49 @@ function renderBook(book) {
              </div>`;
 }
 
-const editBookTitleInput = document.getElementById("editBookTitle");
-const editBookAuthorInput = document.getElementById("editBookAuthor");
-const editBookGenreInput = document.getElementById("editBookGenre");
-const editBookPriceInput = document.getElementById("editBookPrice");
-const editBookDescriptionInput = document.getElementById("editBookDescription");
-const editBookForm = document.getElementById("editBookForm");
-const editModal = new bootstrap.Modal(document.getElementById("editBookModal"));
+const editBookImageInput = document.getElementById('editBookImage');
+const editBookTitleInput = document.getElementById('editBookTitle');
+const editBookAuthorInput = document.getElementById('editBookAuthor');
+const editBookGenreInput = document.getElementById('editBookGenre');
+const editBookPriceInput = document.getElementById('editBookPrice');
+const editBookDescriptionInput = document.getElementById('editBookDescription');
+const editBookForm = document.getElementById('editBookForm');
+const editModal = new bootstrap.Modal(document.getElementById('editBookModal'));
 
 function fillEditForm(id) {
-  const bookToEdit = books.find((book) => book.id === `${id}`);
+    const bookToEdit = books.find(book => book.id === `${id}`);
 
-  editBookTitleInput.value = bookToEdit.title;
-  editBookAuthorInput.value = bookToEdit.author;
-  editBookGenreInput.option = bookToEdit.genre;
-  editBookPriceInput.value = bookToEdit.price;
-  editBookDescriptionInput.textContent = bookToEdit.description;
+    editBookImageInput.value = bookToEdit.image;
+    editBookTitleInput.value = bookToEdit.title;
+    editBookAuthorInput.value = bookToEdit.author;
+    editBookGenreInput.option = bookToEdit.genre;
+    editBookPriceInput.value = bookToEdit.price;
+    editBookDescriptionInput.textContent = bookToEdit.description;
+
+    document.getElementById('saveEditBtn').addEventListener('click', () => editBook(id));
+}
+
+function editBook(id) {  
+    const editedImage = editBookImageInput.value;
+    const editedTitle = editBookTitleInput.value;
+    const editedAuthor = editBookAuthorInput.value;
+    const editedGenre = editBookGenreInput.value;
+    const editedPrice = parseFloat(editBookPriceInput.value);
+    const editedDescription = editBookDescriptionInput.value;
+
+    if (!editedImage || !editedTitle || !editedAuthor || !editedGenre || isNaN(editedPrice) || editedPrice <= 0 || !editedDescription) {
+        alert("Por favor, preencha todos os campos corretamente.");
+        return;
+    }
+
+    const editedBook = {
+        image: editedImage,
+        title: editedTitle,
+        author: editedAuthor,
+        genre: editedGenre,
+        price: editedPrice,
+        description: editedDescription,
+    };
 
   document
     .getElementById("saveEditBtn")
@@ -234,7 +289,6 @@ function editBook(id) {
 }
 
 function deleteBook(id) {
-  console.log(books);
   fetch(`http://localhost:3000/books/${id}`, {
     method: "DELETE",
   })
@@ -244,4 +298,16 @@ function deleteBook(id) {
       alert("Livro removido com sucesso");
     })
     .catch((err) => console.error("Erro ao excluir livro: ", err));
+}
+
+function deleteUser(id) {
+  fetch(`http://localhost:3000/users/${id}`, {
+    method: 'DELETE'
+  })
+    .then(() => {
+      users.filter(user => user.id != id);
+      renderUsers();
+      alert("Usuário removido com sucesso");
+    })
+    .catch((err) => console.error("Erro ao excluir usuário: ", err));
 }
