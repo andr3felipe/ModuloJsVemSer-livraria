@@ -222,7 +222,19 @@ main h1::after {
 }
 
 .resume {
-  margin-top: 2rem;
+  border: 1px solid #0060b1;
+  padding: 2rem;
+  border-radius: 4px;
+}
+.resume h2 {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  position: relative;
+  font-weight: 700;
+  line-height: 2.125rem;
+}
+.resume p {
+  font-weight: 600;
 }
 
 /*# sourceMappingURL=cart.css.map */

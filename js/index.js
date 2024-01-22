@@ -8,40 +8,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 });
 
-async function getBooks() {
-  const response = await fetch("http://localhost:3000/books");
-  const books = await response.json();
-  return books;
-}
-
 function randomGenerator(length) {
   return Math.floor(Math.random() * length);
 }
 
 function goToLogin() {
   window.location.href = "../pages/login.html";
-}
-
-async function addToCart(bookId) {
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const booksData = await getBooks();
-  const book = booksData.find((book) => book.id == bookId);
-
-  if (cart.find((book) => book.id == bookId)) {
-    cart.map((book) => {
-      if (book.id == bookId) {
-        book.quantity += 1;
-      }
-
-      return book;
-    });
-  } else {
-    cart.push({ ...book, quantity: 1 });
-  }
-
-  localStorage.setItem("cart", JSON.stringify([...cart]));
-
-  renderCartCounter();
 }
 
 async function handleChangeCategory(categoryClicked) {

@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     document.body.style.display = "block";
     renderFavorities();
-    fixButtons();
+    fixButtons({ inPainelPage: false, home: false });
   }
 });
 
