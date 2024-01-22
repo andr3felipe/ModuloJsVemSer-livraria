@@ -95,101 +95,58 @@ body {
   }
 }
 main {
-  max-width: 1440px;
-  margin: 5rem auto 2rem;
-  padding: 2rem;
+  padding: 3rem 2rem;
   min-height: 30vh;
 }
-
-.custom-heading {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
-}
-.custom-heading > h1 {
+main h1 {
+  text-transform: uppercase;
   font-size: 1.5rem;
+  position: relative;
   font-weight: 700;
+  line-height: 2.125rem;
 }
-.custom-heading i {
-  margin-top: -8px;
-  font-size: 2rem;
-  color: #ff6500;
+main h1::after {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  content: "";
+  width: 2rem;
+  border: 2px solid #0060b1;
 }
 
-.custom-cards-container {
+.custom-container {
   display: flex;
   flex-flow: row wrap;
-  gap: 2rem;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: space-around;
+  gap: 1rem;
 }
 
-.custom-card {
+.products-container {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-flow: row wrap;
+  margin-top: 2rem;
+}
+
+.product {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 1rem;
   flex-flow: column;
   border: 1px solid #e5e9f2;
-  max-width: 230px;
   border-radius: 0.25rem;
   background-color: white;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
   transition: all 200ms ease-in-out;
-  cursor: pointer;
-  height: 410px;
+  padding: 1rem;
+  max-width: 210px;
+  height: 100%;
 }
-.custom-card:hover {
-  box-shadow: 5px 6px 7px rgba(0, 0, 0, 0.15);
-}
-.custom-card .custom-card-head {
-  padding: 12px 12px 0px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: end;
-  position: relative;
-}
-.custom-card .custom-card-image {
-  width: 100%;
-  max-height: 200px;
-}
-.custom-card .custom-card-image > img {
-  object-fit: cover;
-  width: 100%;
-}
-.custom-card .custom-card-body {
-  width: 100%;
-  padding: 0px 16px;
-}
-.custom-card .custom-card-body p {
-  margin-bottom: 0;
-}
-.custom-card .custom-card-body .title {
-  font-size: 1.2rem;
-  font-weight: 500;
-  line-height: 1.125rem;
-  color: rgb(66, 70, 77);
-  margin-bottom: 1rem;
-}
-.custom-card .custom-card-body .custom-card-price {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-.custom-card .custom-card-body .custom-card-price .price-off {
-  font-size: 1rem;
-  line-height: 1.375rem;
-  font-weight: 500;
-  display: flex;
-  -webkit-box-align: center;
-  align-items: center;
-  color: #000;
-  text-decoration: line-through;
-}
-.custom-card .custom-card-body .custom-card-price .price {
+.product .product-price {
   display: flex;
   -webkit-box-align: center;
   align-items: center;
@@ -199,15 +156,51 @@ main {
   text-decoration: none;
   color: #ff6500;
 }
-.custom-card .custom-card-footer {
+.product .price-off {
+  font-size: 1rem;
+  line-height: 1.375rem;
+  font-weight: 500;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  color: #000;
+  text-decoration: line-through;
+}
+.product p {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  max-height: 42px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-wrap: pretty;
+}
+.product:hover {
+  box-shadow: 5px 6px 7px rgba(0, 0, 0, 0.15);
+}
+.product .buttons {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  padding: 0 0.75rem 0.75rem;
-  width: 100%;
+  margin-bottom: 1rem;
 }
-.custom-card .custom-card-footer .add-to-cart {
+.product .buttons input {
+  flex-basis: 4rem;
+  text-align: center;
+}
+.product .buttons button {
+  color: #0060b1;
+  border: none;
+  background-color: transparent;
+  font-size: 3rem;
+}
+.product .buttons button:hover {
+  opacity: 0.8;
+}
+
+.remove-product {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -224,31 +217,12 @@ main {
   border: none;
   transition: all 200ms ease-in-out;
 }
-.custom-card .custom-card-footer .add-to-cart:hover {
+.remove-product:hover {
   opacity: 0.8;
 }
-.custom-card .custom-card-footer i {
-  font-size: 1.8rem;
-}
-.custom-card .custom-card-footer .favorite {
-  color: red;
-  animation: heart 0.5s ease-in-out infinite alternate;
-}
-.custom-card .custom-card-footer .favorite-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 2rem;
+
+.resume {
+  margin-top: 2rem;
 }
 
-.empty-favorities {
-  text-align: center;
-}
-
-.custom-card-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/*# sourceMappingURL=favorites.css.map */
+/*# sourceMappingURL=cart.css.map */

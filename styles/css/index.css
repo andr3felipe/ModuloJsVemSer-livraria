@@ -152,7 +152,7 @@ h1 {
   gap: 1rem;
   flex-flow: column;
   border: 1px solid #e5e9f2;
-  max-width: 230px;
+  max-width: 210px;
   border-radius: 0.25rem;
   background-color: white;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
@@ -187,11 +187,13 @@ h1 {
   margin-bottom: 0;
 }
 .custom-card .custom-card-body .title {
-  font-size: 1.2rem;
-  font-weight: 500;
-  line-height: 1.125rem;
-  color: rgb(66, 70, 77);
+  font-weight: 600;
+  text-transform: uppercase;
   margin-bottom: 1rem;
+  max-height: 42px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-wrap: pretty;
 }
 .custom-card .custom-card-body .custom-card-price {
   display: flex;
