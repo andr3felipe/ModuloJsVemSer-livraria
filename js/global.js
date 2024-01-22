@@ -23,11 +23,32 @@ async function updateUser() {
 
 function renderCartCounter() {
   const cartItems = getCart().length;
-  if (cartItems > 0) {
-    document.getElementById(
-      "cart-icon"
-    ).innerHTML = `<span id="cart-count">${cartItems}</span>`;
+  const cart = document.getElementById("cart-icon");
+  if (cart && cartItems > 0) {
+    cart.innerHTML = `<span id="cart-count">${cartItems}</span>`;
   }
+}
+
+async function addToCart(bookId) {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const booksData = await getBooks();
+  const book = booksData.find((book) => book.id == bookId);
+
+  if (cart.find((book) => book.id == bookId)) {
+    cart.map((book) => {
+      if (book.id == bookId) {
+        book.quantity += 1;
+      }
+
+      return book;
+    });
+  } else {
+    cart.push({ ...book, quantity: 1 });
+  }
+
+  localStorage.setItem("cart", JSON.stringify([...cart]));
+
+  renderCartCounter();
 }
 
 async function getUserData() {
@@ -86,6 +107,12 @@ ${renderMyProfileButtonMobile}
 </li>`;
 }
 
+async function getBooks() {
+  const response = await fetch("http://localhost:3000/books");
+  const books = await response.json();
+  return books;
+}
+
 exports = {
   renderCartCounter,
   getCart,
@@ -95,4 +122,6 @@ exports = {
   fixButtons,
   logout,
   updateUser,
+  addToCart,
+  getBooks,
 };
