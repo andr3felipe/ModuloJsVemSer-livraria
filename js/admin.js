@@ -22,49 +22,56 @@ const modal = new bootstrap.Modal(document.getElementById('addBookModal'));
 const form = document.querySelector('form');
 
 document.addEventListener("DOMContentLoaded", () => {
-  const sidebarItems = document.querySelectorAll(".sidebarItem");
-  const sections = document.querySelectorAll("section");
+  const user = JSON.parse(localStorage.getItem('user'));
 
-  sidebarItems.forEach((item) => {
-    item.addEventListener("click", () => {
-      sidebarItems.forEach((item) => {
-        item.classList.remove("active-item");
+  if (!user.isAdmin) {
+    document.getElementById('manageUsers').style.display = 'none';
+    document.getElementById('manageBooks').style.display = 'none';
+  } else {
+    const sidebarItems = document.querySelectorAll(".sidebarItem");
+    const sections = document.querySelectorAll("section");
+  
+    sidebarItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        sidebarItems.forEach((item) => {
+          item.classList.remove("active-item");
+        });
+  
+        item.classList.add("active-item");
+  
+        sections.forEach((section) => {
+          if (item.id === section.id) {
+            section.style.display = "flex";
+          } else {
+            section.style.display = "none";
+          }
+        });
       });
-
-      item.classList.add("active-item");
-
-      sections.forEach((section) => {
-        if (item.id === section.id) {
-          section.style.display = "flex";
-        } else {
-          section.style.display = "none";
-        }
-      });
+  
+      fetch("http://localhost:3000/books")
+        .then((response) => response.json())
+        .then((data) => {
+          books = data;
+          renderBooks();
+        })
+        .catch((err) =>
+          console.error("Erro ao obter os dados do servidor: ", err)
+        );
+  
+      fetch('http://localhost:3000/users')
+        .then(response => response.json()) 
+        .then(data => {
+          users = data;
+          renderUsers();
+        })
+        .catch((err) =>
+          console.error("Erro ao obter os dados do servidor: ", err)
+        );
+  
+      const saveEditBtn = document.getElementById("saveEditBtn");
+      saveEditBtn.addEventListener("click", editBook);
     });
-
-    fetch("http://localhost:3000/books")
-      .then((response) => response.json())
-      .then((data) => {
-        books = data;
-        renderBooks();
-      })
-      .catch((err) =>
-        console.error("Erro ao obter os dados do servidor: ", err)
-      );
-
-    fetch('http://localhost:3000/users')
-      .then(response => response.json()) 
-      .then(data => {
-        users = data;
-        renderUsers();
-      })
-      .catch((err) =>
-        console.error("Erro ao obter os dados do servidor: ", err)
-      );
-
-    const saveEditBtn = document.getElementById("saveEditBtn");
-    saveEditBtn.addEventListener("click", editBook);
-  });
+  }
 });
 
 function renderUsers() {
