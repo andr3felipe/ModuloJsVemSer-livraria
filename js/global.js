@@ -54,18 +54,36 @@ function verifyLogin() {
   return user != null;
 }
 
-function fixButtons() {
+function fixButtons({ inPainelPage = false, home = false }) {
   document.getElementById("login-button")?.remove();
   document.getElementById("login-button-desktop")?.remove();
 
+  const painelHref = home ? "./pages/admin.html" : "./admin.html";
+
   document.getElementById("desktop-navbar").innerHTML += `
   <a
+  href="../pages/login.html"
   onclick="logout()"  
   class="btn d-flex align-items-center justify-content-center gap-1 custom-navbar-icon"
 >
   <i class="ph ph-sign-out fs-4"></i>
   Sair
 </a>`;
+
+  const renderMyProfileButtonMobile = inPainelPage
+    ? ""
+    : `<li class="nav-item text-center custom-nav-item-mobile">
+    <a class="nav-link" href=${painelHref}>Meu perfil</a>
+    </li>`;
+
+  document.getElementById("mobile-navbar").innerHTML += `
+${renderMyProfileButtonMobile}
+  
+<li class="nav-item text-center custom-nav-item-mobile">
+    <a class="nav-link" href="../pages/login.html" onclick="logout()"
+>Sair</a
+>
+</li>`;
 }
 
 exports = {
