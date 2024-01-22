@@ -20,10 +20,17 @@
 }
 
 main {
-    max-width: 1400px !important;
     margin-top: 80px;
     display: flex;
     gap: 120px;
+    
+    @media screen {
+        @media (max-width: 800px) {
+            flex-direction: column;
+            gap: 0;
+            align-items: center;
+        }
+    }
 
     h2 {
         margin-bottom: 50px;
@@ -33,13 +40,14 @@ main {
         display: flex;
         flex-direction: column;
         align-items: center;
-        max-width: 300px;
+        width: 200px;
         gap: 30px;
 
         .user-info {
             display: flex;
             flex-direction: column;
             align-items: center;
+            text-align: center;
 
             h3 {
                 font-size: 1.2rem;
@@ -67,6 +75,10 @@ main {
                 flex-direction: row;
             }
 
+            @media (max-width: 390px) {
+                flex-wrap: wrap;
+            }
+
             .active-item {
                 border-color: $primary;
                 font-weight: 500;
@@ -87,15 +99,37 @@ main {
 
     .personal-data-container, 
     .manage-books-container,
-    .add-book-container {
+    .manage-users-container {
         flex: 1;
         padding-top: 20px;
+    }
+
+    .manage-button {
+        background-color: transparent;
+        border: none;
+        border-radius: $radii;
+        padding: 8px 10px;
+        transition: 0.2s;
+    }
+
+    .manage-button:hover {
+        background-color: rgba(208, 207, 207, 0.681);
+    }
+
+    .manage-img {
+        width: 20px;
     }
 
     .personal-data-container {
         width: 100%;
         display: flex;
         flex-direction: column;
+
+        @media screen {
+            @media (max-width: 800px) {
+                align-items: center;
+            }   
+        }
 
         .personal-data {
             display: grid;
@@ -114,6 +148,10 @@ main {
             .data-field {
                 font-size: 1.2rem;
                 
+                @media (max-width: 390px) {
+                    font-size: 1.05rem;
+                }
+
                 label {
                     font-weight: 500;
                 }
@@ -125,12 +163,58 @@ main {
         }
     }
 
+    .manage-users-container,
+    .users {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .manage-users-container {
+        display: none;
+
+        @media screen {
+            @media (max-width: 800px) {
+                align-items: center;
+            }
+        }
+        
+        .users {
+            gap: 20px;
+
+            .user {
+                display: flex;
+                max-width: 600px;
+                padding: 5px;
+                align-items: center;
+                justify-content: space-between;
+
+                > div {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+    
+                    p {
+                        font-size: 1.1rem;
+                        margin: 0;
+                    }
+                    
+                    img {
+                        width: 50px;
+                    }
+                }
+            }
+        }
+    }
+
     .manage-books-container {
         display: none;
         flex-direction: column;
 
-        @media (max-width: 800px) {
-            align-items: center;
+        @media screen {
+            @media (max-width: 800px) {
+                align-items: center;
+            }
         }
 
         .custom-nav {
@@ -162,8 +246,10 @@ main {
             flex-wrap: wrap;
             gap: 40px;
 
-            @media (max-width: 800px) {
-                justify-content: center;
+            @media screen {
+                @media (max-width: 800px) {
+                    justify-content: center;
+                }
             }
 
             .custom-card {
@@ -285,75 +371,12 @@ main {
             .manage-buttons {
                 display: flex;
                 justify-content: end;
-
-                button {
-                    background-color: transparent;
-                    border: none;
-                    border-radius: $radii;
-                    padding: 8px 10px;
-                    transition: 0.2s;
-                }
-
-                button:hover {
-                    background-color: rgba(208, 207, 207, 0.681);
-                }
-    
-                .manage-img {
-                    width: 20px;
-                }
             }
         }
     }
 
     #addBookModal {
         color: $text-dark;
-    }
-
-    .add-book-container {
-        display: none;
-        flex-direction: column;
-
-        form {
-            display: grid;
-            grid-template-columns: auto auto;
-            grid-template-rows: repeat(5, auto);
-            gap: 20px;
-            
-            label {
-                font-size: 1.1rem;
-                margin-bottom: 8px;
-            }
-
-            input {
-                width: 100%;
-                padding: 5px 10px;
-            }
-
-            .book-image {
-                grid-column: span 2;
-            }
-
-            .book-description {
-                grid-column: span 2;
-            }
-
-            .custom-select {
-                width: 100%;
-            }
-
-            button {
-                background-color: $primary;
-                color: $text-white;
-                border: none;
-                border-radius: $radii;
-                padding: 8px 30px;
-                transition: 0.2s;
-            }
-
-            button:hover {
-                opacity: 0.9;
-            }
-        }
     }
 
     form {
@@ -395,22 +418,6 @@ main {
 
         button:hover {
             opacity: 0.9;
-        }
-    }
-}
-
-@media screen {
-    main {
-        @media (max-width: 800px) {
-            flex-direction: column;
-            gap: 0;
-            align-items: center;
-        }
-    }
-
-    aside {
-        @media (max-width: 800px) {
-            
         }
     }
 }

@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 let books = [];
+let users = [];
 
 const imageInput = document.getElementById('bookImage');
 const titleInput = document.getElementById('bookTitle');
@@ -51,10 +52,41 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Erro ao obter os dados do servidor: ", err)
       );
 
+    fetch('http://localhost:3000/users')
+      .then(response => response.json()) 
+      .then(data => {
+        users = data;
+        renderUsers();
+      })
+      .catch((err) =>
+        console.error("Erro ao obter os dados do servidor: ", err)
+      );
+
     const saveEditBtn = document.getElementById("saveEditBtn");
     saveEditBtn.addEventListener("click", editBook);
   });
 });
+
+function renderUsers() {
+  document.querySelector('.users').innerHTML = "";
+  
+  users.forEach(user => {
+    document.querySelector('.users').innerHTML += renderUser(user);
+  });
+}
+
+function renderUser(user) {
+  return `<div class="user">
+      <div>
+        <img src="../assets/user.png" alt="imagem de perfil de usuário sem foto">
+        <p>${user.name}</p>
+      </div>
+      <button class="manage-button" onclick="deleteUser('${user.id}')">
+        <img class="manage-img" id="removeBtn" src="../assets/trash.png" alt="icone de remover"></button>
+      </button>
+    </div>
+  `;
+}
 
 function addBook() {
     const image = imageInput.value.trim();
@@ -150,10 +182,10 @@ function renderBook(book) {
                     <div class="manage-buttons">
                         <button type="button" onclick="fillEditForm('${
                           book.id
-                        }')" class="edit-btn" data-bs-toggle="modal" data-bs-target="#editBookModal">
+                        }')" class="manage-button edit-btn" data-bs-toggle="modal" data-bs-target="#editBookModal">
                             <img class="manage-img" id="editPencilBtn" src="../assets/pencil.png" alt="icone de editar">
                         </button>
-                        <button onclick="deleteBook('${book.id}')">
+                        <button class="manage-button" onclick="deleteBook('${book.id}')">
                             <img class="manage-img" id="removeBtn" src="../assets/trash.png" alt="icone de remover"></button>
                         </button>
                     </div>
@@ -257,7 +289,6 @@ function editBook(id) {
 }
 
 function deleteBook(id) {
-  console.log(books);
   fetch(`http://localhost:3000/books/${id}`, {
     method: "DELETE",
   })
@@ -267,4 +298,16 @@ function deleteBook(id) {
       alert("Livro removido com sucesso");
     })
     .catch((err) => console.error("Erro ao excluir livro: ", err));
+}
+
+function deleteUser(id) {
+  fetch(`http://localhost:3000/users/${id}`, {
+    method: 'DELETE'
+  })
+    .then(() => {
+      users.filter(user => user.id != id);
+      renderUsers();
+      alert("Usuário removido com sucesso");
+    })
+    .catch((err) => console.error("Erro ao excluir usuário: ", err));
 }

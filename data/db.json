@@ -118,21 +118,6 @@
   ],
   "books": [
     {
-      "id": "1",
-      "image": "../assets/books/1.webp",
-      "title": "Sistemas de comunicação",
-      "description": "Este livro abrange assuntos que envolvem os diversos tipos de sistemas de comunicação, sua evolução durante os anos, bem como os parâmetros necessários para o entendimento da matéria. Apresenta os serviços outorgados pela Agência Nacional de Telecomunicações (Anatel). Explica as unidades de medida, sua conversão e os níveis de potência. Discorre sobre ruído, meios de transmissão e tipos de modulação. Conceitua a transformação dos sinais analógicos em sinais digitais. Orienta sobre técnicas de modulação por pulsos e em modems, e sobre os parâmetros utilizados em antena, empregados em várias bandas de frequências. Explana sobre cálculo de viabilidade de um enlace via rádio e seus procedimentos teóricos. Analisa os princípios da fibra óptica e as modulações adotadas para aumentar a capacidade de transmissão de sinais. Traz informações sobre telefonia celular, radiodifusão digital e comunicação via satélite. O conteúdo pode ser aplicado para os cursos técnicos em Redes de Computadores, Sistemas de Comutação, Sistemas de Transmissão, Telecomunicações, entre outros. Possui material de apoio ao professor.",
-      "price": 1000,
-      "discountPercent": 10,
-      "category": "Informática",
-      "publishedYear": 2015,
-      "author": "Soares Neto, Vicente",
-      "publisher": "Saraiva Educação S. A.",
-      "pages": 176,
-      "cover": "Livro brochura (paperback)",
-      "language": "Português"
-    },
-    {
       "id": "3",
       "image": "../assets/books/3.webp",
       "title": "Estruturas de dados",
