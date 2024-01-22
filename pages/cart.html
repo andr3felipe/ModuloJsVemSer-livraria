@@ -168,7 +168,7 @@
 
     <main>
       <h1>Minha cesta</h1>
-      <div class="custom-container">
+      <div class="custom-container" id="custom-container">
         <div class="products-container" id="products-container"></div>
         <div class="resume" id="resume">
           <div class="resume-container">
@@ -189,7 +189,9 @@
                 <p id="total">R$ 0,00</p>
               </div>
               <div class="resume-content-item">
-                <button class="btn btn-primary">Finalizar compra</button>
+                <button class="btn btn-primary" onclick="order()">
+                  Finalizar compra
+                </button>
               </div>
             </div>
           </div>

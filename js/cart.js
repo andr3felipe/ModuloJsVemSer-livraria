@@ -10,6 +10,22 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+function order() {
+  document.getElementById("products-container").remove();
+  document.getElementById("resume").remove();
+
+  const container = document.getElementById("custom-container");
+
+  container.innerHTML = `
+    <div class="order mt-5">
+      <h2>Seu pedido foi realizado com sucesso!</h2>
+      <p>Em breve você receberá um e-mail com os detalhes do seu pedido.</p>
+    </div>
+  `;
+
+  localStorage.removeItem("cart");
+}
+
 function removeProduct(id) {
   const products = JSON.parse(localStorage.getItem("cart"));
   const productIndex = products.findIndex((product) => product.id == id);
@@ -61,7 +77,7 @@ function totalCart() {
 }
 
 function renderProducts() {
-  const products = JSON.parse(localStorage.getItem("cart"));
+  const products = JSON.parse(localStorage.getItem("cart")) || [];
   const productsContainer = document.getElementById("products-container");
 
   productsContainer.innerHTML =
