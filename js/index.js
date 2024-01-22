@@ -44,27 +44,43 @@ async function addToCart(bookId) {
   renderCartCounter();
 }
 
-function handleChangeCategory(categoryClicked) {
+async function handleChangeCategory(categoryClicked) {
   contentSection.classList.remove("hidden");
   searchResult.classList.add("hidden");
   categorySelected.classList.remove("hidden");
   categorySelected.innerHTML = categoryClicked;
-  renderBooks(({ category }) => category === categoryClicked);
+
+  const books = await getBooks();
+  const booksFound = books.filter(
+    ({ category }) => category === categoryClicked
+  );
+
+  contentContainer.innerHTML =
+    booksFound.length > 0
+      ? booksFound.reduce((pV, cV) => pV + renderBook(cV), "")
+      : "Não foram encontrados livros";
 }
 
-function handleChangeSearch() {
+async function handleChangeSearch() {
   const { value } = search;
+
   contentSection.classList[!value ? "add" : "remove"]("hidden");
   searchResult.classList.remove("hidden");
   categorySelected.classList.add("hidden");
-  renderBooks(({ title }) =>
+
+  const books = await getBooks();
+  const searchedBooks = books.filter(({ title }) =>
     title?.toLowerCase().includes(value?.toLowerCase())
   );
+
+  contentContainer.innerHTML =
+    searchedBooks.length > 0
+      ? searchedBooks.reduce((pV, cV) => pV + renderBook(cV), "")
+      : "Não foram encontrados livros";
 }
 
-async function renderBooks(filter) {
+async function renderBooks() {
   const books = await getBooks();
-  const searchedBooks = filter ? books.filter(filter) : books;
   const copyBooks = books;
 
   const user = JSON.parse(localStorage.getItem("user")) || null;
@@ -74,11 +90,6 @@ async function renderBooks(filter) {
     "you-might-be-interested"
   );
   const recentlySeen = document.getElementById("recently-seen");
-
-  contentContainer.innerHTML =
-    searchedBooks.length > 0
-      ? searchedBooks.reduce((pV, cV) => pV + renderBook(cV), "")
-      : "Não foram encontrados livros";
 
   let bestSellersBooks = "";
 
