@@ -48,6 +48,72 @@
         }
       ],
       "favorites": []
+    },
+    {
+      "id": "532d",
+      "name": "André Felipe de Sousa",
+      "email": "andre.felipe_680@hotmail.com",
+      "password": "123123",
+      "isAdmin": false,
+      "address": {
+        "zipCode": "13504-36",
+        "neighborhood": "spsss",
+        "street": "Rua 21",
+        "number": "3650",
+        "city": "Rio Claro",
+        "state": "sp"
+      }
+    },
+    {
+      "id": "8432",
+      "name": "teste",
+      "email": "teste@example.com",
+      "password": "123123",
+      "isAdmin": false,
+      "favorites": [],
+      "orders": [],
+      "address": {
+        "zipCode": "13504-36",
+        "neighborhood": "Jardim Wenzel",
+        "street": "Rua 21",
+        "number": "3650",
+        "city": "Rio Claro",
+        "state": "SP"
+      }
+    },
+    {
+      "id": "59fc",
+      "name": "teste",
+      "email": "andre.felipe_6380@hotmail.com",
+      "password": "123123",
+      "isAdmin": false,
+      "favorites": [],
+      "orders": [],
+      "address": {
+        "zipCode": "13504-36",
+        "neighborhood": "sssssss",
+        "street": "Rua 21",
+        "number": "3650",
+        "city": "Rio Claro",
+        "state": "ss"
+      }
+    },
+    {
+      "id": "d51a",
+      "name": "test",
+      "email": "test3e@teste.com",
+      "password": "123123",
+      "isAdmin": false,
+      "favorites": [],
+      "orders": [],
+      "address": {
+        "zipCode": "13504-36",
+        "neighborhood": "SS",
+        "street": "Rua 21",
+        "number": "3650",
+        "city": "Rio Claro",
+        "state": "SP"
+      }
     }
   ],
   "books": [
