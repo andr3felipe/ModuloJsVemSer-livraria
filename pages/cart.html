@@ -8,6 +8,7 @@
     <meta name="author" content="Grupo 1" />
     <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
     <title>BibliotecaVirtual | Cesta</title>
+    <script src="../js/cart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -25,6 +26,7 @@
     <link rel="stylesheet" href="../styles/css/login.css" />
     <link rel="stylesheet" href="../styles/css/footer.css" />
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="../js/global.js"></script>
   </head>
   <body>
     <header class="sticky-top header">
@@ -70,6 +72,14 @@
                 Início
               </a>
               <a
+                id="login-button-desktop"
+                href="./login.html"
+                class="btn d-flex align-items-center justify-content-center gap-1 custom-navbar-icon"
+              >
+                <i class="ph ph-user fs-4"></i>
+                Login
+              </a>
+              <a
                 href="./favorites.html"
                 class="btn d-flex align-items-center justify-content-center gap-1 custom-navbar-icon"
               >
@@ -83,14 +93,6 @@
               >
                 <i class="ph ph-user fs-4"></i>
                 Meu perfil
-              </a>
-
-              <a
-                href="./cart.html"
-                class="btn d-flex align-items-center justify-content-center gap-1 custom-navbar-icon"
-              >
-                <i class="ph ph-sign-out fs-4"></i>
-                Sair
               </a>
             </div>
             <button
@@ -125,15 +127,21 @@
               ></button>
             </div>
             <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <ul
+                class="navbar-nav justify-content-end flex-grow-1 pe-3"
+                id="mobile-navbar"
+              >
                 <li class="nav-item text-center custom-nav-item-mobile">
                   <a class="nav-link" href="../index.html">Início</a>
                 </li>
-                <li class="nav-item text-center custom-nav-item-mobile">
-                  <a class="nav-link" href="./favorites.html">Favoritos</a>
+                <li
+                  class="nav-item text-center custom-nav-item-mobile"
+                  id="login-button-mobile"
+                >
+                  <a class="nav-link" href="./login.html">Login</a>
                 </li>
                 <li class="nav-item text-center custom-nav-item-mobile">
-                  <a class="nav-link" href="./cart.html"> Minha cesta </a>
+                  <a class="nav-link" href="./favorites.html">Favoritos</a>
                 </li>
               </ul>
             </div>
@@ -158,58 +166,7 @@
       </nav>
     </header>
 
-    <main>
-      <div>
-        <img
-          class="books-to-sky"
-          src="../assets/login-img.avif"
-          alt="Livros formando umas escada para o céu"
-        />
-      </div>
-      <div class="form-div">
-        <h1>Fazer login</h1>
-        <form class="border-bottom pb-4" onsubmit="login(event)">
-          <label class="form-label" for="email">E-mail</label>
-          <input
-            type="email"
-            class="form-control"
-            id="email"
-            name="email"
-            required
-          />
-          <label class="form-label mt-3" for="password">Senha</label>
-          <input
-            autocomplete="on"
-            type="password"
-            class="form-control"
-            id="password"
-            name="password"
-            required
-            minlength="6"
-          />
-          <span id="passwordHelpInline" class="form-text">
-            Tem que ter 6-20 caracateres.
-          </span>
-          <button type="submit" class="btn w-100" id="login-button">
-            <i class="ph ph-sign-in fs-4"></i>
-            Entrar
-          </button>
-          <a
-            href="#"
-            id="forgot-password"
-            aria-label="Recuperar senha"
-            class="form-text"
-          >
-            Esqueceu a senha ?
-          </a>
-        </form>
-
-        <h2 class="sign-in">
-          Novo por aqui?
-          <a class="register-link" href="./register.html">Cadastre-se!</a>
-        </h2>
-      </div>
-    </main>
+    <main></main>
 
     <footer>
       <div>

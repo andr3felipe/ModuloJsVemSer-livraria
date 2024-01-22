@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.location.href = "./login.html";
   } else {
     document.body.style.display = "block";
-    fixButtons();
+    fixButtons({ inPainelPage: true });
   }
 });
 
