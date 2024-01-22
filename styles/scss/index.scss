@@ -59,7 +59,7 @@ h1 {
   gap: 1rem;
   flex-flow: column;
   border: 1px solid $secondary;
-  max-width: 230px;
+  max-width: 210px;
   border-radius: $radii-sm;
   background-color: white;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
@@ -99,11 +99,13 @@ h1 {
     }
 
     .title {
-      font-size: 1.2rem;
-      font-weight: 500;
-      line-height: 1.125rem;
-      color: $product-title;
+      font-weight: 600;
+      text-transform: uppercase;
       margin-bottom: 1rem;
+      max-height: 42px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-wrap: pretty;
     }
 
     .custom-card-price {
