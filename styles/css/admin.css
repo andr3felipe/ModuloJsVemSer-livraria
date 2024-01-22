@@ -112,9 +112,16 @@ body {
 }
 
 main {
-  margin-top: 5rem;
+  margin-top: 80px;
   display: flex;
   gap: 120px;
+}
+@media screen and (max-width: 800px) {
+  main {
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+  }
 }
 main h2 {
   margin-bottom: 50px;
@@ -123,13 +130,14 @@ main aside {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 300px;
+  width: 200px;
   gap: 30px;
 }
 main aside .user-info {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 main aside .user-info h3 {
   font-size: 1.2rem;
@@ -154,6 +162,11 @@ main aside ul {
     flex-direction: row;
   }
 }
+@media (max-width: 390px) {
+  main aside ul {
+    flex-wrap: wrap;
+  }
+}
 main aside ul .active-item {
   border-color: #0060b1;
   font-weight: 500;
@@ -169,14 +182,32 @@ main .active-section {
 }
 main .personal-data-container,
 main .manage-books-container,
-main .add-book-container {
+main .manage-users-container {
   flex: 1;
   padding-top: 20px;
+}
+main .manage-button {
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 10px;
+  transition: 0.2s;
+}
+main .manage-button:hover {
+  background-color: rgba(208, 207, 207, 0.681);
+}
+main .manage-img {
+  width: 20px;
 }
 main .personal-data-container {
   width: 100%;
   display: flex;
   flex-direction: column;
+}
+@media screen and (max-width: 800px) {
+  main .personal-data-container {
+    align-items: center;
+  }
 }
 main .personal-data-container .personal-data {
   display: grid;
@@ -196,17 +227,58 @@ main .personal-data-container .personal-data {
 main .personal-data-container .personal-data .data-field {
   font-size: 1.2rem;
 }
+@media (max-width: 390px) {
+  main .personal-data-container .personal-data .data-field {
+    font-size: 1.05rem;
+  }
+}
 main .personal-data-container .personal-data .data-field label {
   font-weight: 500;
 }
 main .personal-data-container .personal-data .email-field {
   grid-column: span 2;
 }
+main .manage-users-container,
+main .users {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+main .manage-users-container {
+  display: none;
+}
+@media screen and (max-width: 800px) {
+  main .manage-users-container {
+    align-items: center;
+  }
+}
+main .manage-users-container .users {
+  gap: 20px;
+}
+main .manage-users-container .users .user {
+  display: flex;
+  max-width: 600px;
+  padding: 5px;
+  align-items: center;
+  justify-content: space-between;
+}
+main .manage-users-container .users .user > div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+main .manage-users-container .users .user > div p {
+  font-size: 1.1rem;
+  margin: 0;
+}
+main .manage-users-container .users .user > div img {
+  width: 50px;
+}
 main .manage-books-container {
   display: none;
   flex-direction: column;
 }
-@media (max-width: 800px) {
+@media screen and (max-width: 800px) {
   main .manage-books-container {
     align-items: center;
   }
@@ -234,7 +306,7 @@ main .manage-books-container .cards {
   flex-wrap: wrap;
   gap: 40px;
 }
-@media (max-width: 800px) {
+@media screen and (max-width: 800px) {
   main .manage-books-container .cards {
     justify-content: center;
   }
@@ -345,56 +417,8 @@ main .manage-books-container .cards .manage-buttons {
   display: flex;
   justify-content: end;
 }
-main .manage-books-container .cards .manage-buttons button {
-  background-color: transparent;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 10px;
-  transition: 0.2s;
-}
-main .manage-books-container .cards .manage-buttons button:hover {
-  background-color: rgba(208, 207, 207, 0.681);
-}
-main .manage-books-container .cards .manage-buttons .manage-img {
-  width: 20px;
-}
 main #addBookModal {
   color: #000;
-}
-main .add-book-container {
-  display: none;
-  flex-direction: column;
-}
-main .add-book-container form {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto auto auto auto;
-  gap: 20px;
-}
-main .add-book-container form label {
-  font-size: 1.1rem;
-  margin-bottom: 8px;
-}
-main .add-book-container form input {
-  width: 100%;
-  padding: 5px 10px;
-}
-main .add-book-container form .bookDescription {
-  grid-column: span 2;
-}
-main .add-book-container form .custom-select {
-  width: 100%;
-}
-main .add-book-container form button {
-  background-color: #0060b1;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 30px;
-  transition: 0.2s;
-}
-main .add-book-container form button:hover {
-  opacity: 0.9;
 }
 main form {
   display: grid;
@@ -410,7 +434,10 @@ main form input {
   width: 100%;
   padding: 5px 10px;
 }
-main form .bookDescription {
+main form .book-image {
+  grid-column: span 2;
+}
+main form .book-description {
   grid-column: span 2;
 }
 main form .custom-select {
@@ -426,14 +453,6 @@ main form button {
 }
 main form button:hover {
   opacity: 0.9;
-}
-
-@media screen and (max-width: 800px) {
-  main {
-    flex-direction: column;
-    gap: 0;
-    align-items: center;
-  }
 }
 
 /*# sourceMappingURL=admin.css.map */
