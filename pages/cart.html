@@ -23,10 +23,10 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="../styles/css/global.css" />
-    <link rel="stylesheet" href="../styles/css/login.css" />
     <link rel="stylesheet" href="../styles/css/footer.css" />
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <script src="../js/global.js"></script>
+    <link rel="stylesheet" href="../styles/css/cart.css" />
   </head>
   <body>
     <header class="sticky-top header">
@@ -166,7 +166,36 @@
       </nav>
     </header>
 
-    <main></main>
+    <main>
+      <h1>Minha cesta</h1>
+      <div class="custom-container">
+        <div class="products-container" id="products-container"></div>
+        <div class="resume" id="resume">
+          <div class="resume-container">
+            <div class="resume-title">
+              <h2>Resumo do pedido</h2>
+            </div>
+            <div class="resume-content">
+              <div class="resume-content-item">
+                <p>Subtotal</p>
+                <p id="subtotal">R$ 0,00</p>
+              </div>
+              <div class="resume-content-item">
+                <p>Frete</p>
+                <p id="frete">R$ 0,00</p>
+              </div>
+              <div class="resume-content-item">
+                <p>Total</p>
+                <p id="total">R$ 0,00</p>
+              </div>
+              <div class="resume-content-item">
+                <button class="btn btn-primary">Finalizar compra</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <footer>
       <div>

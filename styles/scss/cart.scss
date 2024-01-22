@@ -1,0 +1,144 @@
+@import "./global.scss";
+
+main {
+  padding: 3rem 2rem;
+  min-height: 30vh;
+
+  h1 {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    position: relative;
+    font-weight: 700;
+    line-height: 2.125rem;
+
+    &::after {
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+      content: "";
+      width: 2rem;
+      border: 2px solid $primary;
+    }
+  }
+}
+
+.custom-container {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.products-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-flow: row wrap;
+  margin-top: 2rem;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-flow: column;
+  border: 1px solid $secondary;
+  border-radius: $radii-sm;
+  background-color: white;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+  transition: all 200ms ease-in-out;
+
+  padding: 1rem;
+  max-width: 210px;
+  height: 100%;
+
+  .product-price {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: $orange-weak;
+  }
+
+  .price-off {
+    font-size: 1rem;
+    line-height: 1.375rem;
+    font-weight: 500;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    color: $text-dark;
+    text-decoration: line-through;
+  }
+
+  p {
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    max-height: 42px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-wrap: pretty;
+  }
+
+  &:hover {
+    box-shadow: 5px 6px 7px rgba(0, 0, 0, 0.15);
+  }
+
+  .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+    input {
+      flex-basis: 4rem;
+      text-align: center;
+    }
+
+    button {
+      color: $primary;
+      border: none;
+      background-color: transparent;
+      font-size: 3rem;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.remove-product {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border-radius: $radii-sm;
+  background-color: $primary;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  transition: all 200ms ease-in-out;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.resume {
+  margin-top: 2rem;
+}
