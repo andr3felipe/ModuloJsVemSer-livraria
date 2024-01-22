@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   renderBooks();
 
   if (verifyLogin()) {
-    fixButtons();
+    fixButtons({ home: true });
   } else {
     document.getElementById("profile-button-desktop").remove();
   }
