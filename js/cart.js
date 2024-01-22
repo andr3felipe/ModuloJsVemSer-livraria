@@ -11,6 +11,14 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function order() {
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  if (!user) {
+    window.location.href = "./login.html";
+    alert("Você precisa estar logado para realizar um pedido.");
+    return;
+  }
+
   document.getElementById("products-container").remove();
   document.getElementById("resume").remove();
 
