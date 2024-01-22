@@ -171,7 +171,6 @@ main h1::after {
   font-weight: 600;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
-  max-height: 42px;
   overflow: hidden;
   text-overflow: ellipsis;
   text-wrap: pretty;
